@@ -39,7 +39,9 @@
         "https://*.myshopify.com/admin/themes/*"
       ],
       "js": [
-        "src/inject/inject.js"
+        "js/jquery/jquery.min.js",
+        "src/inject/inject.js",
+        "src/feature/autoFullScreen.js"
       ]
     }
   ]
