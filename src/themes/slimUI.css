@@ -1,0 +1,72 @@
+.asset-listing-theme-file__list-item {
+  font-size: 1.2rem!important;
+  margin-left: 5px!important;
+  padding: 0!important;
+}
+
+.asset-search {
+  padding: 5px!important;
+}
+
+.file-overview {
+  border-bottom: none!important;
+  padding: 0!important;
+}
+
+.newDesignLanguage .template-editor-titlebar__actions .ui-button {
+  border: none!important;
+}
+
+.newDesignLanguage .ui-breadcrumbs .ui-breadcrumb {
+  border: none!important;
+  min-height: 1em!important;
+}
+
+.newDesignLanguage .ui-button--size-small,
+.newDesignLanguage .btn-slim {
+  font-size: 12px!important;
+  min-height: 1em!important;
+  padding: 4px!important;
+}
+
+.template-editor-layout {
+  height: calc(100vh - 2em)!important;
+}
+
+.template-editor-layout__sidebar {
+  max-width: 250px!important;
+}
+
+.template-editor-tab-bar {
+  max-height: 3rem!important;
+  min-height: 3rem!important;
+}
+
+.template-editor-titlebar {
+  min-height: 0!important;
+  z-index: 999!important;
+}
+
+.template-editor-titlebar__actions {
+  align-items: baseline;
+  display: contents!important;
+}
+
+.template-editor-titlebar__title {
+  max-width: 40%!important;
+}
+
+.template-editor-titlebar__title-context,
+.view-older-versions,
+.theme-asset-name {
+  font-size: 12px!important;
+}
+
+.template-editor-toolbar {
+  display: none!important;
+}
+
+.ui-button-group,
+.button-group {
+  margin-top: -.6rem!important;
+}

@@ -23,7 +23,9 @@
     "default_popup": "src/browser_action/browser_action.html"
   },
   "permissions": [
-    "activeTab"
+    "storage",
+    "activeTab",
+    "https://*.myshopify.com/admin/themes/*"
   ],
   "content_scripts": [
     {
@@ -41,7 +43,8 @@
       "js": [
         "js/jquery/jquery.min.js",
         "src/inject/inject.js",
-        "src/feature/autoFullScreen.js"
+        "src/feature/autoFullScreen.js",
+        "src/feature/slimUI.js"
       ]
     }
   ]
