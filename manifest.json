@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "manifest_version": 2,
   "description": "Enhance the Shopify theme code editor",
-  "homepage_url": "//",
+  "homepage_url": "https://github.com/lukechadwick/Liquify",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
@@ -23,12 +23,12 @@
     "default_popup": "src/browser_action/browser_action.html"
   },
   "permissions": [
-    "tabs"
+    "activeTab"
   ],
   "content_scripts": [
     {
       "matches": [
-        "*.myshopify.com/admin/themes/"
+        "https://*.myshopify.com/admin/themes/*"
       ],
       "css": [
         "src/inject/inject.css"
@@ -36,7 +36,7 @@
     },
     {
       "matches": [
-        "*.myshopify.com/admin/themes/"
+        "https://*.myshopify.com/admin/themes/*"
       ],
       "js": [
         "src/inject/inject.js"
