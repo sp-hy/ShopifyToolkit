@@ -44,7 +44,8 @@
         "src/feature/autoFullScreen.js",
         "src/feature/slimUI.js",
         "src/feature/applyTheme.js",
-        "src/feature/attachIcons.js"
+        "src/feature/attachIcons.js",
+        "src/feature/search.js"
       ]
     }
   ]
