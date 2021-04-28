@@ -70,3 +70,7 @@
 .button-group {
   margin-top: -.6rem!important;
 }
+
+html {
+  overflow: hidden;
+}

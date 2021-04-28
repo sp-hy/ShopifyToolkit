@@ -44,7 +44,8 @@
         "js/jquery/jquery.min.js",
         "src/inject/inject.js",
         "src/feature/autoFullScreen.js",
-        "src/feature/slimUI.js"
+        "src/feature/slimUI.js",
+        "src/feature/applyTheme.js"
       ]
     }
   ]
