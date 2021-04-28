@@ -1,6 +1,6 @@
 {
   "name": "Liquify",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "manifest_version": 2,
   "description": "Enhance the Shopify theme code editor",
   "homepage_url": "https://github.com/lukechadwick/Liquify",
@@ -45,7 +45,8 @@
         "src/inject/inject.js",
         "src/feature/autoFullScreen.js",
         "src/feature/slimUI.js",
-        "src/feature/applyTheme.js"
+        "src/feature/applyTheme.js",
+        "src/feature/attachIcons.js"
       ]
     }
   ]
