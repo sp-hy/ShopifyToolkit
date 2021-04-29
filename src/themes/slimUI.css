@@ -87,6 +87,7 @@ html {
 .asset-search.search-loading svg{
   animation-name: ckw;
   animation-duration: 2s;
+  fill: orange;
   animation-iteration-count: infinite;
 }
 @keyframes ckw {
