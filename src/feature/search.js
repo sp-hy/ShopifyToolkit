@@ -2,19 +2,76 @@ let searchInterval = setInterval(() => {
   if (!$(".asset-listing-list").length) return;
   clearInterval(searchInterval);
 
-  // Collect asset list
-  let $assetList = $("[data-asset-key]");
+  // Get asset list
+  getAssets();
 
-  // Filter out assets that don't contain code
-
-  // Batch ajax request theme files
-
-  // Some kind progress bar/percentage shown
-
-  // Modify searchbox to switch between asset and code search
-
-  // Take input from search field and show/hide files that do/don't contain the query
-
-  // Output
-  console.log($assetList)
+  // Set loading message
+  $('#asset-search').attr('placeholder', "Enhanced search loading...").addClass("search-loading");
+  $('.asset-search').addClass("search-loading");
 }, 500);
+
+getAssets = () => {
+  // Get Asset list from server
+  $.ajax({
+    url: window.location.href.split('?')[0] + "/assets.json",
+  }).done(function (data) {
+    // Filter out assets that aren't in the allowed list
+    let allowedExtensions = ['.liquid', '.js', '.css', '.scss']
+    let filteredResponse = data.assets.filter(word => allowedExtensions.some(v => word.key.includes(v)));
+
+    getAssetData(filteredResponse)
+  });
+}
+
+getAssetData = (filteredResponse) => {
+  // Ajax query for each asset URL
+  var requests = filteredResponse.map(function (asset) {
+    return $.ajax({
+      method: 'GET',
+      url: window.location.href.split('?')[0] + "/assets.json?asset[key]=" + asset.key
+    });
+  });
+
+  // Fire once all ajax calls to asset files are complete
+  $.when(...requests).then((...responses) => {
+    let newResponses = responses.map(item => {
+      return item = item[0]
+    })
+
+    createSearchField(newResponses)
+  })
+}
+
+createSearchField = (assetArray) => {
+  // Override default search element
+  $('#asset-search').replaceWith($('#asset-search').clone());
+  $('#asset-search').attr('placeholder', "Search filename / contents...");
+  $('.asset-search').removeClass("search-loading");
+  $('#asset-search').on('input', function (e) {
+    let searchTerm = e.target.value;
+
+    // Find matches in asset files
+    let filtered = assetArray.filter(obj => Object.values(obj).some(asset => asset.value.includes(searchTerm)));
+
+    // Create list of matched files
+    let filteredFiles = filtered.map(item => item = item.asset.key)
+
+    filterFileList(filteredFiles, searchTerm)
+  })
+}
+
+filterFileList = (fileList, searchTerm) => {
+  // Get list of assets from DOM
+  let assetList = document.querySelectorAll('[data-asset-key]')
+
+  for (var item of assetList) {
+    let assetKey = item.getAttribute("data-asset-key")
+
+    // Show file if filename or contents match search term, else hide
+    if (fileList.includes(assetKey) || assetKey.includes(searchTerm) || searchTerm == "") {
+      item.style.display = 'block';
+    } else {
+      item.style.display = 'none';
+    }
+  }
+}

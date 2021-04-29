@@ -8,6 +8,10 @@
   padding: 5px!important;
 }
 
+#asset-search {
+  font-size: 13px!important;
+}
+
 .file-overview {
   border-bottom: none!important;
   padding: 0!important;
@@ -78,4 +82,22 @@ html {
 .asset-listing-theme-file__list-item .next-icon--size-20 {
   width: 12px!important;
   height: 12px!important;
+}
+
+.asset-search.search-loading svg{
+  animation-name: ckw;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+@keyframes ckw {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+.asset-search svg{
+  fill: #2688ff
 }
