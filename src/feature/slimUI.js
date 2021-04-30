@@ -6,10 +6,4 @@ let slimInterval = setInterval(() => {
   let $titlebar = $(".template-editor-titlebar");
 
   $titlebar.append($fileOverview);
-
-  // Apply slimUI theme
-  chrome.runtime.sendMessage({
-    type: "ApplyTheme",
-    themeName: "slimUI",
-  });
 }, 500);

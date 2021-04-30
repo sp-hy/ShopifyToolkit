@@ -59,9 +59,3 @@ let iconInterval = setInterval(() => {
     }
   }
 }, 500);
-
-// Apply icon theme
-chrome.runtime.sendMessage({
-  type: "ApplyTheme",
-  themeName: "icons",
-});
