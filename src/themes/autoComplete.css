@@ -1,0 +1,13 @@
+#autocomplete {
+  min-width: 200px;
+  position: fixed;
+  z-index: 9;
+}
+
+#autocomplete li {
+  list-style: none;
+}
+
+.input-highlight {
+  font-weight: bold;
+}

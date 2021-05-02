@@ -230,3 +230,17 @@
   border-left: var(--background) 1px solid !important;
   border-right: var(--background) 1px solid !important;
 }
+
+#autocomplete {
+  color: white;
+  background: var(--tab-background);
+  border: 1px solid var(--search-border);
+}
+
+#autocomplete li.active {
+  background: #00304c;
+}
+
+.input-highlight {
+  color: var(--button);
+}
