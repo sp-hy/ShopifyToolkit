@@ -1,6 +1,6 @@
 {
   "name": "Liquify",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "manifest_version": 2,
   "description": "Enhance the Shopify theme code editor",
   "homepage_url": "https://github.com/lukechadwick/Liquify",
@@ -8,9 +8,7 @@
     "128": "icons/icon128.png"
   },
   "background": {
-    "scripts": [
-      "src/bg/background.js"
-    ],
+    "scripts": ["src/bg/background.js"],
     "persistent": true
   },
   "options_page": "src/options/index.html",
@@ -26,9 +24,7 @@
   ],
   "content_scripts": [
     {
-      "matches": [
-        "https://*.myshopify.com/admin/themes/*"
-      ],
+      "matches": ["https://*.myshopify.com/admin/themes/*"],
       "js": [
         "thirdParty/jquery.min.js",
         "src/feature/autoFullScreen.js",

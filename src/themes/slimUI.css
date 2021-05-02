@@ -57,7 +57,10 @@
 }
 
 .template-editor-titlebar__title {
-  max-width: 40%!important;
+  max-width: 20%!important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .template-editor-titlebar__title-context,

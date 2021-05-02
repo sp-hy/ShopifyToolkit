@@ -25,42 +25,42 @@
 
 .CodeMirror,
 .CodeMirror-lines .CodeMirror-gutters {
-  background-color: var(--background)!important;
-  font: normal normal 400 12px/18px Menlo, Monaco, "Courier New", monospace!important;
-  letter-spacing: 0!important;
+  background-color: var(--background) !important;
+  font: normal normal 400 12px/18px Menlo, Monaco, "Courier New", monospace !important;
+  letter-spacing: 0 !important;
 }
 
 .CodeMirror-activeline-background {
-  background-color: transparent!important;
+  background-color: transparent !important;
 }
 
 .CodeMirror-cursor {
-  border-left: 1px solid var(--cursor)!important;
+  border-left: 1px solid var(--cursor) !important;
 }
 
 .CodeMirror-gutter-filler,
 .CodeMirror-scrollbar-filler {
-  display: none!important;
+  display: none !important;
 }
 
 .CodeMirror-gutters {
-  background-color: var(--background)!important;
-  border-right: 2px solid var(--background)!important;
+  background-color: var(--background) !important;
+  border-right: 2px solid var(--background) !important;
 }
 
 .CodeMirror-lines,
 .CodeMirror-gutters,
 .template-editor-tab-bar {
-  box-shadow: #000 0 6px 6px -6px inset!important;
+  box-shadow: #000 0 6px 6px -6px inset !important;
 }
 
 .CodeMirror-selected {
-  background: var(--selected)!important;
+  background: var(--selected) !important;
 }
 
 .asset-search .next-input--stylized {
   border: var(--search-border) 1px solid;
-  border-top: var(--search-border) 1px solid!important;
+  border-top: var(--search-border) 1px solid !important;
 }
 
 .asset-search .next-input--stylized:focus {
@@ -71,28 +71,28 @@
 
 .asset-search input,
 .asset-search .next-input--stylized {
-  background-color: var(--background)!important;
+  background-color: var(--background) !important;
   border: var(--search-border) 1px solid;
 }
 
 .asset-search input,
 .template-editor-tab.active {
-  background-color: var(--background)!important;
+  background-color: var(--background) !important;
   color: var(--text-color);
 }
 
 .asset-search,
 .template-editor-tab-bar,
 .template-editor-layout__sidebar {
-  background-color: var(--sidebar)!important;
+  background-color: var(--sidebar) !important;
 }
 
 .cm-builtin {
-  color: var(--cm-builtin)!important;
+  color: var(--cm-builtin) !important;
 }
 
 .cm-comment {
-  color: var(--cm-comment)!important;
+  color: var(--cm-comment) !important;
 }
 
 .cm-def,
@@ -102,40 +102,40 @@
 .cm-liquid-string.cm-liquid-tag-markup.cm-liquid,
 .cm-liquid-word.cm-liquid-tag-markup.cm-liquid-method.cm-liquid,
 .cm-liquid-word.cm-liquid-output-markup.cm-liquid-variable.cm-liquid {
-  color: var(--cm-variable)!important;
+  color: var(--cm-variable) !important;
 }
 
 .cm-liquid-atom.cm-liquid-tag-markup.cm-liquid,
 .cm-number {
-  color: var(--cm-liquid-atom)!important;
+  color: var(--cm-liquid-atom) !important;
 }
 
 .cm-operator,
 .CodeMirror-code,
 .cm-liquid-tag-markup.cm-liquid,
 .cm-liquid-markup-delimiter.cm-liquid {
-  color: var(--cursor)!important;
+  color: var(--cursor) !important;
 }
 
 .cm-property,
 .cm-liquid-output-markup.cm-liquid,
 .cm-liquid-word.cm-liquid-tag-markup.cm-liquid,
 .cm-liquid-word.cm-liquid-tag-markup.cm-liquid-variable.cm-liquid {
-  color: var(--cm-property)!important;
+  color: var(--cm-property) !important;
 }
 
 .cm-qualifier {
-  color: var(--cm-qualifier)!important;
+  color: var(--cm-qualifier) !important;
 }
 
 .cm-string,
 .cm-liquid-string,
 .cm-variable-3 {
-  color: var(--cm-string)!important;
+  color: var(--cm-string) !important;
 }
 
 .cm-string-2 {
-  color: var(--cm-string-2)!important;
+  color: var(--cm-string-2) !important;
 }
 
 .cm-tag,
@@ -144,46 +144,46 @@
 .cm-keyword,
 .cm-liquid-word.cm-liquid-tag-markup.cm-liquid-tag-name.cm-liquid,
 .cm-liquid-word.cm-liquid-tag-markup.cm-liquid-endtag-name.cm-liquid {
-  color: var(--cm-keyword)!important;
+  color: var(--cm-keyword) !important;
 }
 
 .cm-tag.cm-bracket {
-  color: var(--cm-bracket)!important;
+  color: var(--cm-bracket) !important;
 }
 
 .file-overview,
 .template-editor-titlebar {
-  background-color: var(--file-overview-background)!important;
-  border-left: var(--cm-bracket) 3px solid!important;
+  background-color: var(--file-overview-background) !important;
+  border-left: var(--cm-bracket) 3px solid !important;
 }
 
 .fresh-ui .ui-breadcrumb:hover {
-  background: var(--cm-bracket)!important;
+  background: var(--cm-bracket) !important;
 }
 
 .template-editor-layout__main {
-  background-color: var(--background)!important;
+  background-color: var(--background) !important;
 }
 
 .template-editor-layout__sidebar {
-  border-right: var(--sidebar)!important;
+  border-right: var(--sidebar) !important;
 }
 
 .template-editor-tab {
-  background-color: var(--tab-background)!important;
+  background-color: var(--tab-background) !important;
 }
 
 .template-editor-tab .template-editor-tab-filename {
-  color: var(--tab-text-color)!important;
+  color: var(--tab-text-color) !important;
 }
 
 .template-editor-tab-bar {
-  border: var(--background) 1px solid!important;
+  border: var(--background) 1px solid !important;
 }
 
 .template-editor-titlebar__actions .ui-button {
-  background: var(--button)!important;
-  margin: .2em;
+  background: var(--button) !important;
+  margin: 0.2em;
 }
 
 .ui-button,
@@ -194,36 +194,36 @@
 #asset-list .next-input--search,
 .template-editor-titlebar__title,
 .active .template-editor-tab-filename {
-  color: var(--text-color)!important;
+  color: var(--text-color) !important;
 }
 
 .ui-button-group .ui-button.ui-button--size-small {
-  background: var(--button)!important;
-  border: none!important;
+  background: var(--button) !important;
+  border: none !important;
   box-shadow: none;
-  opacity: 1!important;
+  opacity: 1 !important;
 }
 
 .ui-button-group .ui-button.ui-button--size-small:disabled {
-  opacity: .6!important;
+  opacity: 0.6 !important;
 }
 
 ::-webkit-scrollbar {
-  height: 12px!important;
-  width: 12px!important;
+  height: 12px !important;
+  width: 12px !important;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--webkit-scrollbar-thumb)!important;
+  background: var(--webkit-scrollbar-thumb) !important;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--webkit-scrollbar-thumb-hover)!important;
+  background: var(--webkit-scrollbar-thumb-hover) !important;
 }
 
 ::-webkit-scrollbar-track {
-  background: none!important;
-  border: 1px solid var(--webkit-scrollbar-thumb)!important;
+  background: none !important;
+  border: 1px solid var(--webkit-scrollbar-thumb) !important;
 }
 
 .template-editor-tab {
