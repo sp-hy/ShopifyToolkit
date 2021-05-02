@@ -230,3 +230,7 @@
   border-left: var(--tab-border-color) 1px solid !important;
   border-right: var(--tab-border-color) 1px solid !important;
 }
+
+.template-editor-tab {
+  border-top: 1px solid var(--sidebar);
+}
