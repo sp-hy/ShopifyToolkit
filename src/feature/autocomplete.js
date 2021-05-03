@@ -18,7 +18,9 @@ let autoCompleteInverval = setInterval(() => {
     if (event.key == "Escape") keyBuffer = "";
 
     // Begin Autocomplete
-    event.key != "1" && createSuggestion(keyBuffer);
+    event.key != "1" && keyBuffer.length > 0 && createSuggestion(keyBuffer);
+
+    if (!keyBuffer.length) destroySuggestions();
   });
   affixSuggestionBoxToCursor();
   beginEventListeners();
@@ -63,6 +65,8 @@ beginEventListeners = () => {
       let wordIndex = combinedWords.indexOf($activeWord);
       let wordContents = combinedValues[wordIndex];
       console.log(wordContents);
+
+      sendInputToEditor(wordContents);
     }
   });
 };
@@ -97,6 +101,7 @@ createSuggestionBox = (combinedWords, input) => {
 
   if ($("#autocomplete").length == 0) $("body").prepend($autoComplete);
   $("#autocomplete").empty();
+  $("#autocomplete").show();
 
   combinedWords.map((word) => {
     // Create list item element and add to autocomplete list
@@ -112,6 +117,20 @@ createSuggestionBox = (combinedWords, input) => {
     $("#autocomplete").append($wordElement);
   });
 };
+
+destroySuggestions =() =>{
+  keyBuffer = "";
+  $("#autocomplete").hide();
+}
+
+sendInputToEditor = (input) => {
+  let editor = document.getElementsByTagName("textarea")[0];
+
+  editor.value = input;
+  editor.dispatchEvent(new Event("input"));
+
+  destroySuggestions();
+}
 
 let javascript = {
   test: "this is a test",
