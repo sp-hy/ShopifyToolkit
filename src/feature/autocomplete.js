@@ -10,21 +10,47 @@ let autoCompleteInverval = setInterval(() => {
 
   clearInterval(autoCompleteInverval);
 
-  // Listen for key input
-  document.addEventListener("keydown", function (event) {
-    if (event.key.length == 1 && event.key.match(/^[A-Za-z ]+$/))
-      keyBuffer += event.key;
-    if (event.key == "Backspace") keyBuffer = keyBuffer.slice(0, -1);
-    if (event.key == "Escape") keyBuffer = "";
+  // Start event listener logic
+  inputHandler();
+  // Start mouse event logic
+  // mouseHandler();
 
-    // Begin Autocomplete
-    event.key != "1" && keyBuffer.length > 0 && createSuggestion(keyBuffer);
-
-    if (!keyBuffer.length) destroySuggestions();
-  });
   affixSuggestionBoxToCursor();
-  beginEventListeners();
 }, 500);
+
+inputHandler = () => {
+  document.addEventListener("keydown", function (event) {
+    let key = event.key;
+    switch (true) {
+      // Toggle active selection
+      case key == "`":
+        event.preventDefault();
+        createSuggestion(keyBuffer);
+        toggleActiveSelection();
+        break;
+      // Select active
+      case key == "1":
+        if (focusedWord > -1 && keyBuffer.length > 0) {
+          event.preventDefault();
+          activateSelected();
+        }
+        break;
+      // Regular input
+      case key.length == 1:
+        if (key.match(/^[A-Za-z ]+$/)) keyBuffer += key;
+        key != "1" && keyBuffer.length > 0 && createSuggestion(keyBuffer);
+        break;
+      // Backspace hit
+      case key == "Backspace":
+        keyBuffer = keyBuffer.slice(0, -1);
+        break;
+      // Escape hit
+      case key == "Escape":
+        keyBuffer = "";
+        break;
+    }
+  });
+};
 
 affixSuggestionBoxToCursor = () => {
   // Fix autocomplete div to codemirror cursor position
@@ -41,34 +67,26 @@ affixSuggestionBoxToCursor = () => {
   }, 100);
 };
 
-beginEventListeners = () => {
-  document.addEventListener("keydown", function (event) {
-    if (event.key == "`") {
-      event.preventDefault();
+toggleActiveSelection = () => {
+  // Get current autocomplete list
+  let $words = $("#autocomplete li");
 
-      // Get current autocomplete list
-      let $words = $("#autocomplete li");
+  if (focusedWord > $words.length - 2) {
+    focusedWord = 0;
+  } else {
+    focusedWord++;
+  }
+  // Add active class to element
+  $words.eq(focusedWord).addClass("active");
+};
 
-      if (focusedWord > $words.length - 2) {
-        focusedWord = 0;
-      } else {
-        focusedWord++;
-      }
-      // Add active class to element
-      $words.eq(focusedWord).addClass("active");
-    }
+activateSelected = () => {
+  let $activeWord = $("#autocomplete li.active").eq(0).attr("data-word");
 
-    if (focusedWord > -1 && event.key == "1" && keyBuffer.length > 0) {
-      event.preventDefault();
-      let $activeWord = $("#autocomplete li.active").eq(0).attr("data-word");
+  let wordIndex = combinedWords.indexOf($activeWord);
+  let wordContents = combinedValues[wordIndex];
 
-      let wordIndex = combinedWords.indexOf($activeWord);
-      let wordContents = combinedValues[wordIndex];
-      console.log(wordContents);
-
-      sendInputToEditor(wordContents);
-    }
-  });
+  sendInputToEditor(wordContents);
 };
 
 createSuggestion = (input) => {
@@ -118,10 +136,10 @@ createSuggestionBox = (combinedWords, input) => {
   });
 };
 
-destroySuggestions =() =>{
+destroySuggestions = () => {
   keyBuffer = "";
   $("#autocomplete").hide();
-}
+};
 
 sendInputToEditor = (input) => {
   let editor = document.getElementsByTagName("textarea")[0];
@@ -130,7 +148,7 @@ sendInputToEditor = (input) => {
   editor.dispatchEvent(new Event("input"));
 
   destroySuggestions();
-}
+};
 
 let javascript = {
   test: "this is a test",
