@@ -43,11 +43,10 @@ inputHandler = () => {
       // Backspace hit
       case key == "Backspace":
         keyBuffer = keyBuffer.slice(0, -1);
+        createSuggestion(keyBuffer);
         break;
-      // Escape hit
-      case key == "Escape":
-        keyBuffer = "";
-        break;
+      default:
+        destroySuggestions();
     }
   });
 };
@@ -93,10 +92,16 @@ createSuggestion = (input) => {
   combinedWords = Object.keys({
     ...liquid,
     ...javascript,
+    ...html,
+    ...schema,
+    ...css,
   });
   combinedValues = Object.values({
     ...liquid,
     ...javascript,
+    ...html,
+    ...schema,
+    ...css,
   });
 
   // Take the input and look for matches
@@ -119,17 +124,24 @@ createSuggestionBox = (combinedWords, input) => {
 
   if ($("#autocomplete").length == 0) $("body").prepend($autoComplete);
   $("#autocomplete").empty();
-  $("#autocomplete").show();
+
+  if (keyBuffer.length) $("#autocomplete").show();
+  else $("#autocomplete").hide();
 
   combinedWords.map((word) => {
+    let snippetType = word.split("--")[1];
+    let shownWord = word.split("--")[0];
+
     // Create list item element and add to autocomplete list
     let $wordElement =
       "<li data-word=" +
       word +
-      "><span class='input-highlight'>" +
+      "><span data-type=" +
+      snippetType +
+      "></span><span class='input-highlight'>" +
       input +
       "</span><span>" +
-      word.slice(input.length) +
+      shownWord.slice(input.length) +
       "</span></li>";
 
     $("#autocomplete").append($wordElement);
@@ -138,6 +150,7 @@ createSuggestionBox = (combinedWords, input) => {
 
 destroySuggestions = () => {
   keyBuffer = "";
+  focusedWord = -1;
   $("#autocomplete").hide();
 };
 
@@ -151,11 +164,41 @@ sendInputToEditor = (input) => {
 };
 
 let javascript = {
-  test: "this is a test",
-  alsotest: "this is also a test",
+  "if--js": `if (condition) {
+  
+  }`,
+  "if-else--js": `if (condition) {
+  
+  } else {
+    
+  }`,
+  "console.log()--js": `console.log()`,
+  "for--js": `for (let index = 0; index < array.length; index++) {
+    const element = array[index];
+    
+  }`,
 };
 
 let liquid = {
-  comment: "this is a comment",
-  assign: "{%assign %}",
+  "assign--liquid": "{% assign variable = value %}",
+  "if--liquid": `{% if true %}
+  
+{% endif %}`,
+  "if-else--liquid": `{% if true %}
+  
+{% else %}
+  
+{% endif %}`,
+};
+
+let html = {
+  "html--html": "test",
+};
+
+let schema = {
+  "schema--schema": "test",
+};
+
+let css = {
+  "css--css": "test",
 };
