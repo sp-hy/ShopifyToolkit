@@ -171,6 +171,7 @@
 
 .template-editor-tab {
   background-color: var(--tab-background) !important;
+  border-bottom: 1px solid var(--sidebar);
 }
 
 .template-editor-tab .template-editor-tab-filename {

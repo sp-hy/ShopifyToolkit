@@ -169,6 +169,7 @@
 
 .template-editor-tab {
   background-color: var(--tab-background) !important;
+  border-bottom: 1px solid black;
 }
 
 .template-editor-tab-bar {
