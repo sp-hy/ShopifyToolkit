@@ -2,6 +2,10 @@
   min-width: 200px;
   position: fixed;
   z-index: 9;
+  width: 400px;
+  max-height: 300px;
+  overflow-y: scroll;
+  opacity: 0.95;
 }
 
 #autocomplete li {

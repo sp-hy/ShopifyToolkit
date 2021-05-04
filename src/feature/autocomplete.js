@@ -16,13 +16,26 @@ let autoCompleteInverval = setInterval(() => {
 
   // Start event listener logic
   inputHandler();
-  // Start mouse event logic
-  // mouseHandler();
 
   affixSuggestionBoxToCursor();
 }, 500);
 
+mouseHandler = () => {
+  $("[data-word]").each(function (index) {
+    $(this).on("click", (e) => {
+      let wordIndex = combinedWords.indexOf(e.currentTarget.dataset.word);
+      let wordContents = combinedValues[wordIndex];
+      sendInputToCodeMirror(wordContents);
+    });
+  });
+};
+
 inputHandler = () => {
+  window.addEventListener("click", () => {
+    keyBuffer = "";
+    destroySuggestions();
+  });
+
   document.addEventListener("keydown", function (event) {
     let key = event.key;
     switch (true) {
@@ -135,7 +148,7 @@ createSuggestionBox = (combinedWords, input) => {
   if ($("#autocomplete").length == 0) $("body").prepend($autoComplete);
   $("#autocomplete").empty();
 
-  if (keyBuffer.length) $("#autocomplete").show();
+  if (keyBuffer.length && combinedWords.length) $("#autocomplete").show();
   else $("#autocomplete").hide();
 
   combinedWords.map((word) => {
@@ -156,6 +169,7 @@ createSuggestionBox = (combinedWords, input) => {
 
     $("#autocomplete").append($wordElement);
   });
+  mouseHandler();
 };
 
 destroySuggestions = () => {
