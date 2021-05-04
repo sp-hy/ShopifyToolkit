@@ -37,7 +37,7 @@ inputHandler = () => {
   });
 
   document.addEventListener("keydown", function (event) {
-    let key = event.key;
+    let key = event.key.toLowerCase();
     switch (true) {
       // Toggle active selection
       case key == "`":
@@ -178,10 +178,16 @@ destroySuggestions = () => {
   $("#autocomplete").hide();
 };
 
-function sendInputToCodeMirror(snippet) {
+sendInputToCodeMirror = (snippet) => {
+  // As this script doesn't have access to the page context,
+  // create a script that will be injected and execured on the page
+
+  // Format string to json to avoid mutliline string issues
   let formatted = JSON.stringify(snippet);
 
-  let actualCode = `
+  // Send script to page, call native CodeMirror function to replace
+  // the last typed characters with the snippet
+  let injectScript = `
   (function() {
     let editor = document.querySelector(".CodeMirror").CodeMirror;
     let doc = editor.getDoc();
@@ -200,12 +206,12 @@ function sendInputToCodeMirror(snippet) {
   `;
 
   let script = document.createElement("script");
-  script.textContent = actualCode;
+  script.textContent = injectScript;
   (document.head || document.documentElement).appendChild(script);
   script.remove();
 
   destroySuggestions();
-}
+};
 
 let javascript = {
   "alert--js": `alert('alert')`,
