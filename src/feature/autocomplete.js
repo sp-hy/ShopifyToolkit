@@ -5,9 +5,12 @@ let focusedWord = -1;
 let combinedWords = [];
 let combinedValues = [];
 let validInputKeys = `qwertyuiopasdfghjklzxcvbnm[]{};|':",./<>?~1234567890-=_+/*-`;
+let controlUp = true;
 
 let autoCompleteInverval = setInterval(() => {
   if (!$("textarea").length) return;
+
+  let editor = document.getElementsByTagName("textarea")[0];
 
   clearInterval(autoCompleteInverval);
 
@@ -15,7 +18,7 @@ let autoCompleteInverval = setInterval(() => {
   createAutocompleteLibrary();
 
   // Start event listener logic
-  inputHandler();
+  inputHandler(editor);
 
   affixSuggestionBoxToCursor();
 }, 500);
@@ -30,16 +33,20 @@ mouseHandler = () => {
   });
 };
 
-inputHandler = () => {
+inputHandler = (editor) => {
   window.addEventListener("click", () => {
     keyBuffer = "";
     destroySuggestions();
   });
 
-  document.addEventListener("keydown", function (event) {
+  editor.addEventListener("keydown", function (event) {
     let key = event.key.toLowerCase();
-    switch (true) {
+    switch (controlUp) {
       // Toggle active selection
+      case key == "control" || key == "meta":
+        destroySuggestions();
+        controlUp = false;
+        return;
       case key == "`":
         event.preventDefault();
         createSuggestion(keyBuffer);
@@ -53,18 +60,23 @@ inputHandler = () => {
           break;
         }
       // Regular input
-      case key.length == 1:
+      case key.length == 1 || key == "shift":
         if (validInputKeys.indexOf(key) !== -1) keyBuffer += key;
         keyBuffer.length > 0 && createSuggestion(keyBuffer);
         break;
       // Backspace hit
-      case key == "Backspace":
+      case key == "backspace":
         keyBuffer = keyBuffer.slice(0, -1);
         createSuggestion(keyBuffer);
         break;
       default:
         destroySuggestions();
     }
+  });
+
+  document.addEventListener("keyup", function (event) {
+    let key = event.key.toLowerCase();
+    if (key == "control" || key == "meta") controlUp = true;
   });
 };
 

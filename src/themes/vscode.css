@@ -238,7 +238,8 @@
   border: 1px solid var(--search-border);
 }
 
-#autocomplete li.active {
+#autocomplete li.active,
+[data-word]:hover {
   background: #00304c;
 }
 
