@@ -1,7 +1,13 @@
-// Apply main theme
-chrome.runtime.sendMessage({
-  type: "ApplyTheme",
-  themeName: "vscode",
+// Fetch setting and apply editor theme
+chrome.storage.sync.get("chosenTheme", function (data) {
+  // Fallback to vscode if no default theme has been chosen
+  let chosenTheme = data.chosenTheme || "vscode";
+
+  data.chosenTheme != "none" &&
+    chrome.runtime.sendMessage({
+      type: "ApplyTheme",
+      themeName: chosenTheme.toLowerCase(),
+    });
 });
 
 // Apply icon theme

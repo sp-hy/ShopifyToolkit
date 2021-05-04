@@ -1,78 +1,81 @@
 .asset-listing-theme-file__list-item {
-  font-size: 1.2rem!important;
-  margin-left: 5px!important;
-  padding: 0!important;
+  font-size: 1.2rem !important;
+  margin-left: 5px !important;
+  padding: 0 !important;
 }
 
 .asset-search {
-  padding: 5px!important;
+  padding: 5px !important;
 }
 
 #asset-search {
-  font-size: 13px!important;
+  font-size: 13px !important;
 }
 
 .file-overview {
-  border-bottom: none!important;
-  padding: 0!important;
+  border-bottom: none !important;
+  padding: 0 !important;
 }
 
 .newDesignLanguage .template-editor-titlebar__actions .ui-button {
-  border: none!important;
+  border: none !important;
 }
 
 .newDesignLanguage .ui-breadcrumbs .ui-breadcrumb {
-  border: none!important;
-  min-height: 1em!important;
+  border: none !important;
+  min-height: 1em !important;
 }
 
 .newDesignLanguage .ui-button--size-small,
 .newDesignLanguage .btn-slim {
-  font-size: 12px!important;
-  min-height: 1em!important;
-  padding: 4px!important;
+  font-size: 12px !important;
+  min-height: 1em !important;
+  padding: 4px !important;
 }
 
 .template-editor-layout {
-  height: calc(100vh - 2em)!important;
+  height: calc(100vh - 2em) !important;
 }
 
 .template-editor-layout__sidebar {
-  max-width: 250px!important;
+  max-width: 250px !important;
 }
 
 .template-editor-tab-bar {
-  max-height: 3rem!important;
-  min-height: 3rem!important;
+  max-height: 3rem !important;
+  min-height: 3rem !important;
 }
 
 .template-editor-titlebar {
-  min-height: 0!important;
-  z-index: 999!important;
+  min-height: 0 !important;
+  z-index: 999 !important;
 }
 
 .template-editor-titlebar__actions {
   align-items: baseline;
-  display: contents!important;
+  display: contents !important;
 }
 
 .template-editor-titlebar__title {
-  max-width: 40%!important;
+  max-width: 20% !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .template-editor-titlebar__title-context,
 .view-older-versions,
 .theme-asset-name {
-  font-size: 12px!important;
+  font-size: 12px !important;
 }
 
 .template-editor-toolbar {
-  display: none!important;
+  display: none !important;
 }
 
 .ui-button-group,
 .button-group {
-  margin-top: -.6rem!important;
+  margin-top: -0.6rem !important;
 }
 
 html {
@@ -80,11 +83,11 @@ html {
 }
 
 .asset-listing-theme-file__list-item .next-icon--size-20 {
-  width: 12px!important;
-  height: 12px!important;
+  width: 12px !important;
+  height: 12px !important;
 }
 
-.asset-search.search-loading svg{
+.asset-search.search-loading svg {
   animation-name: ckw;
   animation-duration: 2s;
   fill: orange;
@@ -92,13 +95,32 @@ html {
 }
 @keyframes ckw {
   0% {
-      transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
-      transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
-.asset-search svg{
-  fill: #2688ff
+.asset-search svg {
+  fill: #2688ff;
+}
+
+/* Hide codemirror autocomplete */
+.CodeMirror-hints {
+  display: none;
+}
+
+.template-editor-tab-bar {
+  height: auto !important;
+  max-height: 500px !important;
+}
+
+.template-editor-tabs {
+  display: block !important;
+}
+
+.template-editor-tab {
+  float: left;
+  max-height: 2em;
 }

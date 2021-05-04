@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<head>
+  <script src="settings.js"></script>
+</head>
+
+<div id="mainPopup">
+  <div class="title-bar">Liquify</div>
+
+  <div class="popup-inner">
+    <p>Shopify Theme Editor Enhancer</p>
+
+    <div class="theme-selector">
+      <p>Theme:</p>
+      <select class="setting-theme">
+        <option>VSCode</option>
+        <option>Atom</option>
+        <option>None</option>
+      </select>
+    </div>
+
+    <p>Features:</p>
+    <ul>
+      <li>Enhanced Search</li>
+      <li>Autocomplete</li>
+      <li>File type icons</li>
+      <li>Auto fullscren</li>
+      <li>Themes</li>
+      <li>Slim UI</li>
+    </ul>
+  </div>
+</div>
+
+<style type="text/css">
+  #mainPopup {
+    width: 200px;
+    background: #2d2d2d;
+    font-family: Helvetica, Ubuntu, Arial, sans-serif;
+  }
+
+  .setting-theme {
+    height: 18px;
+    background: #2d2d2d;
+  }
+
+  .theme-selector {
+    display: inline-flex;
+  }
+
+  .theme-selector p {
+    margin: 0.2em;
+    margin-left: 0;
+  }
+
+  .title-bar {
+    background-color: #1e1e1e;
+    font-size: 14px;
+    text-align: center;
+    padding: 2px;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  * {
+    color: white;
+  }
+
+  .popup-inner {
+    padding: 1em;
+  }
+
+  li {
+    list-style-type: disclosure-closed;
+  }
+</style>
