@@ -83,6 +83,12 @@ filterFileList = (fileList, searchTerm) => {
       searchTerm == ""
     ) {
       item.style.display = "block";
+      // Open asset folder if collapsed
+      try {
+        item.parentNode.parentNode.parentNode.classList.remove("is-collapsed");
+      } catch (error) {
+        console.log(error);
+      }
     } else {
       item.style.display = "none";
     }

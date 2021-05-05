@@ -111,16 +111,10 @@ html {
   display: none;
 }
 
-.template-editor-tab-bar {
-  height: auto !important;
-  max-height: 500px !important;
+.template-editor-layout__main ::-webkit-scrollbar {
+  height: 7px !important;
 }
 
-.template-editor-tabs {
-  display: block !important;
-}
-
-.template-editor-tab {
-  float: left;
-  max-height: 2em;
+.optimize__search-all {
+  display: none;
 }

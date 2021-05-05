@@ -10,13 +10,26 @@
   <div class="popup-inner">
     <p>Shopify Theme Editor Enhancer</p>
 
-    <div class="theme-selector">
-      <p>Theme:</p>
-      <select class="setting-theme">
+    <div class="setting-container">
+      <p>Editor Theme:</p>
+      <select class="setting-select setting-theme">
         <option>VSCode</option>
         <option>Atom</option>
         <option>None</option>
       </select>
+    </div>
+
+    <div class="setting-container">
+      <p>Tab Behaviour:</p>
+      <select class="setting-select setting-tab">
+        <option>Scroll</option>
+        <option>Stack</option>
+      </select>
+    </div>
+
+    <div class="setting-container">
+      <p>Wrap lines:</p>
+      <input type="checkbox" name="word-wrap" id="word-wrap" />
     </div>
 
     <p>Features:</p>
@@ -28,6 +41,12 @@
       <li>Themes</li>
       <li>Slim UI</li>
     </ul>
+
+    <p>Shortcuts:</p>
+    <button class="button-admin">Admin</button>
+    <button class="button-resource">Open admin page</button>
+    <button class="button-theme-editor">Theme Editor</button>
+    <button class="button-code-editor">Code Editor</button>
   </div>
 </div>
 
@@ -38,18 +57,19 @@
     font-family: Helvetica, Ubuntu, Arial, sans-serif;
   }
 
-  .setting-theme {
+  .setting-select {
     height: 18px;
     background: #2d2d2d;
   }
 
-  .theme-selector {
+  .setting-container {
     display: inline-flex;
   }
 
-  .theme-selector p {
+  .setting-container p {
     margin: 0.2em;
     margin-left: 0;
+    margin-bottom: 0.5em;
   }
 
   .title-bar {
@@ -73,5 +93,12 @@
 
   li {
     list-style-type: disclosure-closed;
+  }
+
+  button {
+    width: 100%;
+    background: darkgrey;
+    border: none;
+    margin-bottom: 5px;
   }
 </style>
