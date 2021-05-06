@@ -1,6 +1,7 @@
 :root {
-  --background: #2e323b;
+  --background: rgb(45, 50, 59);
   --button: #2688ff;
+  --cm-operator: #c678dd;
   --cm-bracket: #abb2bf;
   --cm-builtin: #61afef;
   --cm-comment: #5c6370;
@@ -26,8 +27,12 @@
 .CodeMirror,
 .CodeMirror-lines .CodeMirror-gutters {
   background-color: var(--background) !important;
-  font: normal normal 400 12px/18px Menlo, Monaco, "Courier New", monospace !important;
-  letter-spacing: 0 !important;
+  font-family: Menlo, Monaco, "Courier New", monospace !important;
+  font-weight: normal !important;
+  font-size: 12px !important;
+  font-feature-settings: "liga" 0, "calt" 0 !important;
+  line-height: 18px !important;
+  letter-spacing: 0px !important;
 }
 
 .CodeMirror-activeline-background {
@@ -92,7 +97,6 @@
 .cm-def,
 .cm-variable,
 .cm-variable-2,
-.cm-liquid-string.cm-liquid-tag-markup.cm-liquid,
 .cm-liquid-word.cm-liquid-tag-markup.cm-liquid-method.cm-liquid,
 .cm-liquid-word.cm-liquid-output-markup.cm-liquid-variable.cm-liquid {
   color: var(--cm-variable) !important;
@@ -102,10 +106,18 @@
   color: #c678dd !important;
 }
 
-.cm-liquid-output-markup.cm-liquid,
 .cm-liquid-word.cm-liquid-tag-markup.cm-liquid,
 .cm-liquid-word.cm-liquid-tag-markup.cm-liquid-variable.cm-liquid,
 .cm-string-2 {
+  color: var(--cm-string-2) !important;
+}
+
+.cm-liquid-word.cm-liquid-tag-markup.cm-liquid-operator.cm-liquid {
+  color: var(--cm-operator) !important;
+}
+
+.cm-liquid-word.cm-liquid-output-markup.cm-liquid-filter.cm-liquid,
+.cm-liquid-output-markup.cm-liquid {
   color: var(--cm-string-2) !important;
 }
 
@@ -118,7 +130,6 @@
 }
 
 .cm-property,
-.cm-liquid-output-markup.cm-liquid,
 .cm-liquid-word.cm-liquid-tag-markup.cm-liquid,
 .cm-liquid-word.cm-liquid-tag-markup.cm-liquid-variable.cm-liquid {
   color: var(--cm-property) !important;
@@ -133,7 +144,8 @@
 
 .cm-string,
 .cm-variable-3,
-.cm-liquid-string {
+.cm-liquid-string,
+.cm-liquid-string.cm-liquid-tag-markup.cm-liquid {
   color: var(--cm-string) !important;
 }
 
