@@ -14,10 +14,10 @@
   "options_page": "src/options/index.html",
   "browser_action": {
     "default_icon": "icons/icon128.png",
-    "default_title": "browser action demo",
+    "default_title": "Liquify",
     "default_popup": "src/popup/popup.html"
   },
-  "permissions": ["storage", "activeTab", "tabs", "http://*/", "https://*/"],
+  "permissions": ["storage", "http://*/", "https://*/"],
   "content_scripts": [
     {
       "matches": ["https://*.myshopify.com/admin/themes/*"],
