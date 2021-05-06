@@ -246,3 +246,14 @@
 .input-highlight {
   color: var(--button);
 }
+
+.CodeMirror-dialog,
+.CodeMirror-dialog button,
+.CodeMirror-dialog .next-input--stylized {
+  background: var(--sidebar) !important;
+  border: 1px solid var(--search-border) !important;
+}
+
+.CodeMirror-dialog input {
+  color: white !important;
+}

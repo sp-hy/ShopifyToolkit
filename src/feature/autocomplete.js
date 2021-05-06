@@ -26,9 +26,12 @@ let autoCompleteInverval = setInterval(() => {
 mouseHandler = () => {
   $("[data-word]").each(function (index) {
     $(this).on("click", (e) => {
+      // On click, send snippet to input function
       let wordIndex = combinedWords.indexOf(e.currentTarget.dataset.word);
       let wordContents = combinedValues[wordIndex];
       sendInputToCodeMirror(wordContents);
+      // Return focus to the editor
+      document.querySelector("textarea").focus();
     });
   });
 };
