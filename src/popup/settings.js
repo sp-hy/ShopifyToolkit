@@ -37,4 +37,32 @@ document.addEventListener("DOMContentLoaded", function (event) {
   chrome.storage.sync.get("wrapChecked", function (data) {
     if (data.wrapChecked) checkbox.setAttribute("checked", "true");
   });
+
+  let openResourceButton = document.querySelector(".button-resource");
+  openResourceButton.addEventListener("click", () => {
+    chrome.runtime.sendMessage({
+      type: "openResource",
+    });
+  });
+
+  let openAdmin = document.querySelector(".button-admin");
+  openAdmin.addEventListener("click", () => {
+    chrome.runtime.sendMessage({
+      type: "openAdmin",
+    });
+  });
+
+  let openThemeEditor = document.querySelector(".button-theme-editor");
+  openThemeEditor.addEventListener("click", () => {
+    chrome.runtime.sendMessage({
+      type: "openThemeEditor",
+    });
+  });
+
+  let openCodeEditor = document.querySelector(".button-code-editor");
+  openCodeEditor.addEventListener("click", () => {
+    chrome.runtime.sendMessage({
+      type: "openCodeEditor",
+    });
+  });
 });

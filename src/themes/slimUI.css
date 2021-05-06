@@ -118,3 +118,15 @@ html {
 .optimize__search-all {
   display: none;
 }
+
+.template-editor-tab.active {
+  padding: 0 2em 0 .5em !important;
+}
+
+.template-editor-tab {
+  padding: 0 0.5em !important;
+}
+
+.template-editor-tab-close-button {
+  width: 2.8rem !important;
+}

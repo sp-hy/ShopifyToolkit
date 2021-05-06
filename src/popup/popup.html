@@ -8,8 +8,8 @@
   <div class="title-bar">Liquify</div>
 
   <div class="popup-inner">
-    <p>Shopify Theme Editor Enhancer</p>
-
+    <p>Shopify Code Editor Enhancer</p>
+    <hr />
     <div class="setting-container">
       <p>Editor Theme:</p>
       <select class="setting-select setting-theme">
@@ -28,10 +28,10 @@
     </div>
 
     <div class="setting-container">
-      <p>Wrap lines:</p>
+      <p>Word Wrap Lines:</p>
       <input type="checkbox" name="word-wrap" id="word-wrap" />
     </div>
-
+    <hr />
     <p>Features:</p>
     <ul>
       <li>Enhanced Search</li>
@@ -41,12 +41,12 @@
       <li>Themes</li>
       <li>Slim UI</li>
     </ul>
-
+    <hr />
     <p>Shortcuts:</p>
-    <button class="button-admin">Admin</button>
-    <button class="button-resource">Open admin page</button>
-    <button class="button-theme-editor">Theme Editor</button>
-    <button class="button-code-editor">Code Editor</button>
+    <button class="button-admin">Open Admin Home</button>
+    <button class="button-resource">Open Page in Admin</button>
+    <button class="button-theme-editor">Open Theme Editor</button>
+    <button class="button-code-editor">Open Code Editor</button>
   </div>
 </div>
 
@@ -89,6 +89,8 @@
 
   .popup-inner {
     padding: 1em;
+    padding-top: 0;
+    padding-bottom: 0.5em;
   }
 
   li {
