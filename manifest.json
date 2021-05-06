@@ -17,7 +17,11 @@
     "default_title": "Liquify",
     "default_popup": "src/popup/popup.html"
   },
-  "permissions": ["storage", "http://*/", "https://*/"],
+  "permissions": [
+    "storage",
+    "activeTab",
+    "https://*.myshopify.com/admin/themes/*"
+  ],
   "content_scripts": [
     {
       "matches": ["https://*.myshopify.com/admin/themes/*"],
