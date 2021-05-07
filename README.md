@@ -4,7 +4,7 @@ Liquify is a Chrome browser extension to enhance the Shopify theme code editor.
 
 ## Installation
 
-Get the extension from the [Chrome Store here](https://chrome.google.com/webstore/category/extensions).
+Get the extension from the [Chrome Store here](https://chrome.google.com/webstore/detail/liquify-shopify-theme-cod/edekihmjmpkkkaolmojnajojfgphccma?hl=en).
 
 ## Usage
 
