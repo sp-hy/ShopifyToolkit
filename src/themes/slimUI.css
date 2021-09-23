@@ -34,7 +34,7 @@
 }
 
 .template-editor-layout {
-  height: calc(100vh - 2em) !important;
+  height: calc(100vh - 2.6em) !important;
 }
 
 .template-editor-layout__sidebar {
