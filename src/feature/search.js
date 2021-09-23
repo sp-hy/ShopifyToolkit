@@ -10,6 +10,7 @@ let searchInterval = setInterval(() => {
     .attr("placeholder", "Enhanced search loading...")
     .addClass("search-loading");
   $(".asset-search").addClass("search-loading");
+  $("#asset-search").prop('disabled', true);
 }, 500);
 
 getAssets = () => {
@@ -54,6 +55,7 @@ createSearchField = (assetArray) => {
   $("#asset-search").replaceWith($("#asset-search").clone());
   $("#asset-search").attr("placeholder", "Search filename / contents...");
   $(".asset-search").removeClass("search-loading");
+  $("#asset-search").prop('disabled', false);
   $("#asset-search").on("input", function (e) {
     let searchTerm = e.target.value;
 
