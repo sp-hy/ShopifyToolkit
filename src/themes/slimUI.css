@@ -17,8 +17,10 @@
   padding: 0 !important;
 }
 
-.newDesignLanguage .template-editor-titlebar__actions .ui-button {
+.themes-show-page-container .ui-button {
   border: none !important;
+  font-size: 12px;
+  min-height: unset;
 }
 
 .newDesignLanguage .ui-breadcrumbs .ui-breadcrumb {
@@ -34,7 +36,7 @@
 }
 
 .template-editor-layout {
-  height: calc(100vh - 2.6em) !important;
+  height: calc(100vh - 2.3em) !important;
 }
 
 .template-editor-layout__sidebar {
