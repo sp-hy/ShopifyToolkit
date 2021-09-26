@@ -1,6 +1,6 @@
 {
   "name": "Liquify - Shopify Theme Code Editor Enhancer",
-  "version": "0.8.5",
+  "version": "0.9.0",
   "manifest_version": 2,
   "description": "Enhance the functionality of the Shopify theme code editor",
   "homepage_url": "https://github.com/lukechadwick/Liquify",
@@ -36,6 +36,13 @@
         "src/feature/lineWrap.js",
         "src/feature/tabBehaviour.js"
       ]
+    },
+    {
+      "matches": ["https://*.myshopify.com/admin/*"],
+      "js": [
+        "src/feature/notificationEditor.js"
+      ]
     }
-  ]
+  ],
+  "web_accessible_resources": ["thirdParty/ace.js", "src/feature/notificationEditorInject.js"]
 }

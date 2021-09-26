@@ -13,6 +13,4 @@ let interval = setInterval(() => {
   $exitButton.on( "click", () => {
     $("body").removeClass("fullscreen-mode");
   });
-
-  console.log('full', $exitButton);
 }, 500);
