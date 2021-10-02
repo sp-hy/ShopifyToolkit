@@ -23,9 +23,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
     chrome.storage.sync.set({ tabBehaviour: tabBehaviour });
   });
 
-  var checkbox = document.querySelector("#word-wrap");
+  var checkboxWrap = document.querySelector("#word-wrap");
 
-  checkbox.addEventListener("change", (e) => {
+  checkboxWrap.addEventListener("change", (e) => {
     if (e.target.checked) {
       chrome.storage.sync.set({ wrapChecked: true });
     } else {
@@ -33,9 +33,23 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
   });
 
+  var checkboxWide = document.querySelector("#wide-admin");
+
+  checkboxWide.addEventListener("change", (e) => {
+    if (e.target.checked) {
+      chrome.storage.sync.set({ wideAdmin: true });
+    } else {
+      chrome.storage.sync.set({ wideAdmin: false });
+    }
+  });
+
   // Load previous value
   chrome.storage.sync.get("wrapChecked", function (data) {
-    if (data.wrapChecked) checkbox.setAttribute("checked", "true");
+    if (data.wrapChecked) checkboxWrap.setAttribute("checked", "true");
+  });
+
+  chrome.storage.sync.get("wideAdmin", function (data) {
+    if (data.wideAdmin) checkboxWide.setAttribute("checked", "true");
   });
 
   let openResourceButton = document.querySelector(".button-resource");
