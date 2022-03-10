@@ -12,5 +12,8 @@ let interval = setInterval(() => {
   let $exitButton = $('.template-editor-titlebar .ui-breadcrumbs a')
   $exitButton.on( "click", () => {
     $("body").removeClass("fullscreen-mode");
+    $("body").css({
+      'overflow': 'auto'
+    });
   });
 }, 500);
