@@ -51,6 +51,7 @@ getAssetData = (filteredResponse) => {
 };
 
 createSearchField = (assetArray) => {
+  console.log(assetArray);
   // Override default search element
   $("#asset-search").replaceWith($("#asset-search").clone());
   $("#asset-search").attr("placeholder", "Search filename / contents...");
@@ -60,8 +61,15 @@ createSearchField = (assetArray) => {
     let searchTerm = e.target.value;
 
     // Find matches in asset files
-    let filtered = assetArray.filter((obj) =>
-      Object.values(obj).some((asset) => asset.value.includes(searchTerm))
+    let filtered = assetArray.filter((obj) => 
+      Object.values(obj).some((asset) => {
+        if ('value' in asset) {
+          return asset.value.includes(searchTerm)
+        } else {
+          console.log('asset failed', asset);
+          return false
+        }
+      })
     );
 
     // Create list of matched files
