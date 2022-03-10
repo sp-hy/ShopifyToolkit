@@ -4,6 +4,6 @@ loadScript = (path) => {
   (document.head || document.documentElement).appendChild(s);
 }
 
-loadScript('thirdParty/ace.js');
+// loadScript('thirdParty/ace.js');
 
-loadScript('src/feature/notificationEditorInject.js')
+// loadScript('src/feature/notificationEditorInject.js')
