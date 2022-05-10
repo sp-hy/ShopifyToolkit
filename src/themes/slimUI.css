@@ -143,3 +143,9 @@ html {
 .template-editor-tab-bar, .template-editor-tabs {
   height: auto !important;
 }
+li.template-editor-tab.has-changes {
+  padding-right: 2em !important;
+}
+.template-editor-tab.has-changes::after {
+  right: 0.8em;
+}
