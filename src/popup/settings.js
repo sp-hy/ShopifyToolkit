@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
   });
   // Set new value on change
   tabSetting.addEventListener("change", (e) => {
-    console.log("setting");
     let tabBehaviour = e.target.value;
     chrome.storage.sync.set({ tabBehaviour: tabBehaviour });
   });

@@ -1,7 +1,6 @@
 // Theme loader
 chrome.extension.onMessage.addListener(function (request, sender) {
   if (request.type == "ApplyTheme") {
-    console.log(sender);
     chrome.tabs.insertCSS(sender.tab.id, {
       file: `src/themes/${request.themeName}.css`,
     });

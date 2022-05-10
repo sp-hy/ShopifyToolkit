@@ -39,10 +39,12 @@ applyWidth = () => {
       editor.style.setProperty('width', '100%', 'important');  
     }
 
-    // themes page
-    let themeContainer = document.querySelector('.Polaris-Page_yisnh')
-    if (themeContainer){
-      themeContainer.style.setProperty('max-width', 'unset', 'important');  
+    // themes page iframe
+    let themeIframe = document.querySelector('[title="Online Store"]');
+    if (themeIframe){
+      let elmnt = themeIframe.contentWindow.document.querySelector('.Polaris-Page_yisnh')
+      if (elmnt)
+        elmnt.style.setProperty('max-width', 'unset', 'important');  
     }
   }, 1000);
 };

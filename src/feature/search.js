@@ -51,7 +51,6 @@ getAssetData = (filteredResponse) => {
 };
 
 createSearchField = (assetArray) => {
-  console.log(assetArray);
   // Override default search element
   $("#asset-search").replaceWith($("#asset-search").clone());
   $("#asset-search").attr("placeholder", "Search filename / contents...");
@@ -96,9 +95,7 @@ filterFileList = (fileList, searchTerm) => {
       // Open asset folder if collapsed
       try {
         item.parentNode.parentNode.parentNode.classList.remove("is-collapsed");
-      } catch (error) {
-        console.log(error);
-      }
+      } catch (error) {}
     } else {
       item.style.display = "none";
     }
