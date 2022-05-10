@@ -149,3 +149,14 @@ li.template-editor-tab.has-changes {
 .template-editor-tab.has-changes::after {
   right: 0.8em;
 }
+.theme-asset-actions {
+  padding-top: 3px;
+}
+
+.template-editor-titlebar__actions .ui-popover__container {
+  display: none !important;
+}
+
+button.ui-button.cm-shortcut-widget {
+  background: var(--button);
+}
