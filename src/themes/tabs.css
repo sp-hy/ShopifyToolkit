@@ -1,17 +1,10 @@
 .template-editor-tab-bar {
   height: auto !important;
 }
-
 .template-editor-tabs {
   display: block !important;
 }
-
-.template-editor-tab {
-  float: left;
-  max-height: 2em;
-}
-
-.template-editor-tab-bar {
-  min-height: 3rem !important;
-  max-height: unset !important;
+.template-editor-tabs {
+  overflow-x: visible !important;
+  overflow-y: visible !important;
 }

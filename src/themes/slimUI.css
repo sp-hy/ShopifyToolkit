@@ -43,11 +43,6 @@
   max-width: 250px !important;
 }
 
-.template-editor-tab-bar {
-  max-height: 3rem !important;
-  min-height: 3rem !important;
-}
-
 .template-editor-titlebar {
   min-height: 0 !important;
   z-index: 999 !important;
@@ -131,4 +126,20 @@ html {
 
 .template-editor-tab-close-button {
   width: 2.8rem !important;
+}
+
+.template-editor-tabs [label="Close tab"] {
+  right: -0.5em !important;
+}
+
+.template-editor-tab-bar, .template-editor-tabs {
+  min-height: unset !important;
+  max-height: unset !important;
+}
+.template-editor-tab {
+  float: left;
+  max-height: 2em;
+}
+.template-editor-tab-bar, .template-editor-tabs {
+  height: auto !important;
 }
