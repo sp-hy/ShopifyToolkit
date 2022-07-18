@@ -84,7 +84,7 @@ html {
   height: 12px !important;
 }
 
-.asset-search.search-loading svg {
+.search-loading svg {
   animation-name: ckw;
   animation-duration: 2s;
   fill: orange;

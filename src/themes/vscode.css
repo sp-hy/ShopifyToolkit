@@ -1,3 +1,7 @@
+.cm-editor {
+  background: red !important;
+}
+
 :root {
   --background: #1e1e1e;
   --button: #2688ff;
