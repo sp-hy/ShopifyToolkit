@@ -1,6 +1,6 @@
 {
   "name": "Liquify - Shopify Theme Code Editor Enhancer",
-  "version": "0.9.6",
+  "version": "0.9.7",
   "manifest_version": 2,
   "description": "Enhance the functionality of the Shopify theme code editor",
   "homepage_url": "https://github.com/lukechadwick/Liquify",
@@ -36,7 +36,9 @@
         "src/feature/lineWrap.js",
         "src/feature/tabBehaviour.js",
 
-        "src/feature/search-new.js"
+        "src/feature/_search.js",
+        "src/feature/_theme.js",
+        "src/feature/_attachIcons.js"
       ],
       "all_frames": true
     },
@@ -47,5 +49,5 @@
       ]
     }
   ],
-  "web_accessible_resources": ["src/themes/vscode-new.css"]
+  "web_accessible_resources": ["src/themes/vscode-new.css", "src/themes/icons.css"]
 }
