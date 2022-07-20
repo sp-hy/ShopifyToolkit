@@ -228,6 +228,10 @@
   background-color: #222227;
 }
 
+.cm-panel {
+  background: grey;
+}
+
 .ͼ1 .cm-panels {
   box-sizing: border-box;
   position: sticky;
@@ -775,264 +779,47 @@
 }
 
 
-[p-color-scheme=light] [aria-label="Online store editor"] {
-  --p-background: #0b0c0d;
-  --p-background-hovered: #0b0c0d;
-  --p-background-pressed: #0b0c0d;
-  --p-background-selected: #0b0c0d;
-  --p-surface: #202123;
-  --p-surface-neutral: #313335;
-  --p-surface-neutral-hovered: #313335;
-  --p-surface-neutral-pressed: #313335;
-  --p-surface-neutral-disabled: #313335;
-  --p-surface-neutral-subdued: #44474a;
-  --p-surface-subdued: #1a1c1d;
-  --p-surface-disabled: #1a1c1d;
-  --p-surface-hovered: #2f3133;
-  --p-surface-pressed: #3e4043;
-  --p-surface-depressed: #505356;
-  --p-surface-search-field: #2f3133;
-  --p-backdrop: #00000080;
-  --p-overlay: #21212180;
-  --p-shadow-color-picker: #0000;
-  --p-shadow-color-picker-dragger: #0000;
-  --p-hint-from-direct-light: #b9b9b933;
-  --p-border: #505356;
-  --p-border-neutral-subdued: #82878b;
-  --p-border-hovered: #505356;
-  --p-border-disabled: #676b6f;
-  --p-border-subdued: #82878b;
-  --p-border-depressed: #8e9191;
-  --p-border-shadow: #5b5f62;
-  --p-border-shadow-subdued: #82878b;
-  --p-divider: #454749;
-  --p-icon: #a6acb2;
-  --p-icon-hovered: #e1e3e5;
-  --p-icon-pressed: #a6acb2;
-  --p-icon-disabled: #54575a;
-  --p-icon-subdued: #787d81;
-  --p-text: #e3e5e7;
-  --p-text-disabled: #6f7377;
-  --p-text-subdued: #999fa4;
-  --p-interactive: #36a3ff;
-  --p-interactive-disabled: #2662b6;
-  --p-interactive-hovered: #67afff;
-  --p-interactive-pressed: #88bcff;
-  --p-focused: #2662b6;
-  --p-surface-selected: #020e23;
-  --p-surface-selected-hovered: #071d3d;
-  --p-surface-selected-pressed: #0d2b56;
-  --p-icon-on-interactive: #fff;
-  --p-text-on-interactive: #fff;
-  --p-action-secondary: #4d5053;
-  --p-action-secondary-disabled: #202223;
-  --p-action-secondary-hovered: #54575b;
-  --p-action-secondary-pressed: #606467;
-  --p-action-secondary-depressed: #7b7f84;
-  --p-action-primary: #008060;
-  --p-action-primary-disabled: #005640;
-  --p-action-primary-hovered: #009671;
-  --p-action-primary-pressed: #00a47c;
-  --p-action-primary-depressed: #00b388;
-  --p-icon-on-primary: #e6fff4;
-  --p-text-on-primary: #fff;
-  --p-text-primary: #008d6a;
-  --p-text-primary-hovered: #009e78;
-  --p-text-primary-pressed: #00b085;
-  --p-surface-primary-selected: #0c1210;
-  --p-surface-primary-selected-hovered: #28302c;
-  --p-surface-primary-selected-pressed: #36403b;
-  --p-border-critical: #e32f0e;
-  --p-border-critical-subdued: #e32f0e;
-  --p-border-critical-disabled: #831704;
-  --p-icon-critical: #da2d0d;
-  --p-surface-critical: #450701;
-  --p-surface-critical-subdued: #450701;
-  --p-surface-critical-subdued-hovered: #441714;
-  --p-surface-critical-subdued-pressed: #6b1003;
-  --p-surface-critical-subdued-depressed: #871805;
-  --p-text-critical: #e9807a;
-  --p-action-critical: #cd290c;
-  --p-action-critical-disabled: #bb250a;
-  --p-action-critical-hovered: #e32f0e;
-  --p-action-critical-pressed: #fa3511;
-  --p-action-critical-depressed: #fd5749;
-  --p-icon-on-critical: #fff8f7;
-  --p-text-on-critical: #fff;
-  --p-interactive-critical: #fd726a;
-  --p-interactive-critical-disabled: #feaca8;
-  --p-interactive-critical-hovered: #fd8a84;
-  --p-interactive-critical-pressed: #fd9f9b;
-  --p-border-warning: #997000;
-  --p-border-warning-subdued: #997000;
-  --p-icon-warning: #684b00;
-  --p-surface-warning: #997000;
-  --p-surface-warning-subdued: #4d3b1d;
-  --p-surface-warning-subdued-hovered: #523f20;
-  --p-surface-warning-subdued-pressed: #574322;
-  --p-text-warning: #ca9500;
-  --p-border-highlight: #449da7;
-  --p-border-highlight-subdued: #449da7;
-  --p-icon-highlight: #2c6c73;
-  --p-surface-highlight: #006971;
-  --p-surface-highlight-subdued: #123539;
-  --p-surface-highlight-subdued-hovered: #143a3e;
-  --p-surface-highlight-subdued-pressed: #184146;
-  --p-text-highlight: #a2effa;
-  --p-border-success: #008766;
-  --p-border-success-subdued: #008766;
-  --p-icon-success: #005e46;
-  --p-surface-success: #005e46;
-  --p-surface-success-subdued: #1c352c;
-  --p-surface-success-subdued-hovered: #1f3a30;
-  --p-surface-success-subdued-pressed: #234136;
-  --p-text-success: #58ad8e;
-  --p-icon-attention: #8a6116;
-  --p-surface-attention: #ffea8a;
-  --p-decorative-one-icon: #ffba43;
-  --p-decorative-one-surface: #8e6609;
-  --p-decorative-one-text: #fff;
-  --p-decorative-two-icon: #f5b6c0;
-  --p-decorative-two-surface: #ce5814;
-  --p-decorative-two-text: #fff;
-  --p-decorative-three-icon: #00e38d;
-  --p-decorative-three-surface: #007c5a;
-  --p-decorative-three-text: #fff;
-  --p-decorative-four-icon: #00ddda;
-  --p-decorative-four-surface: #167c79;
-  --p-decorative-four-text: #fff;
-  --p-decorative-five-icon: #f4b7bf;
-  --p-decorative-five-surface: #c23356;
-  --p-decorative-five-text: #fff;
-  --p-breakpoints-xs: 0rem;
-  --p-breakpoints-sm: 30.625rem;
-  --p-breakpoints-md: 48rem;
-  --p-breakpoints-lg: 65rem;
-  --p-breakpoints-xl: 90rem;
-  --p-shadow-transparent: 0 0 0 0 #0000;
-  --p-shadow-faint: 0 0.0625rem 0 0 #161d250d;
-  --p-shadow-base: 0 0 0 0.0625rem #3f3f440d,0 0.0625rem 0.1875rem 0 #3f3f4426;
-  --p-shadow-deep: 0 0 0 0.0625rem #062c521a,0 0.125rem 1rem #212b3614;
-  --p-shadow-button: 0 0.0625rem 0 #0000000d;
-  --p-shadow-top-bar: 0 0.125rem 0.125rem -0.0625rem #00000026;
-  --p-shadow-card: 0 0 0.3125rem #1718180d,0 0.0625rem 0.125rem #00000026;
-  --p-shadow-popover: -0.0625rem 0 1.25rem #1718180d,0 0.0625rem 0.3125rem #00000026;
-  --p-shadow-layer: 0 1.9375rem 2.5625rem 0 #202a3533,0 0.125rem 1rem 0 #202a3614;
-  --p-shadow-modal: 0 1.625rem 5rem #0003,0 0 0.0625rem #0003;
-  --p-shadows-inset-button: inset 0 -0.0625rem 0 #0003;
-  --p-shadows-inset-button-pressed: inset 0 0.0625rem 0 #00000026;
-  --p-override-loading-z-index: 514;
-  --p-choice-size: 1.25rem;
-  --p-icon-size-small: 0.5rem;
-  --p-icon-size-medium: 1.25rem;
-  --p-choice-margin: 0.0625rem;
-  --p-control-border-width: 0.125rem;
-  --p-banner-border-default: inset 0 0.0625rem 0 0 var(--p-border-neutral-subdued),inset 0 0 0 0.0625rem var(--p-border-neutral-subdued);
-  --p-banner-border-success: inset 0 0.0625rem 0 0 var(--p-border-success-subdued),inset 0 0 0 0.0625rem var(--p-border-success-subdued);
-  --p-banner-border-highlight: inset 0 0.0625rem 0 0 var(--p-border-highlight-subdued),inset 0 0 0 0.0625rem var(--p-border-highlight-subdued);
-  --p-banner-border-warning: inset 0 0.0625rem 0 0 var(--p-border-warning-subdued),inset 0 0 0 0.0625rem var(--p-border-warning-subdued);
-  --p-banner-border-critical: inset 0 0.0625rem 0 0 var(--p-border-critical-subdued),inset 0 0 0 0.0625rem var(--p-border-critical-subdued);
-  --p-thin-border-subdued: 0.0625rem solid var(--p-border-subdued);
-  --p-text-field-spinner-offset: 0.125rem;
-  --p-text-field-focus-ring-offset: -0.25rem;
-  --p-button-group-item-spacing: -0.0625rem;
-  --p-range-slider-thumb-size-base: 1rem;
-  --p-range-slider-thumb-size-active: 1.5rem;
-  --p-frame-offset: 0rem;
-  --p-duration-0: 0ms;
-  --p-duration-50: 50ms;
-  --p-duration-100: 100ms;
-  --p-duration-150: 150ms;
-  --p-duration-200: 200ms;
-  --p-duration-250: 250ms;
-  --p-duration-300: 300ms;
-  --p-duration-350: 350ms;
-  --p-duration-400: 400ms;
-  --p-duration-450: 450ms;
-  --p-duration-500: 500ms;
-  --p-duration-5000: 5000ms;
-  --p-ease: cubic-bezier(0.25,0.1,0.25,1);
-  --p-ease-in: cubic-bezier(0.42,0,1,1);
-  --p-ease-out: cubic-bezier(0,0,0.58,1);
-  --p-ease-in-out: cubic-bezier(0.42,0,0.58,1);
-  --p-linear: cubic-bezier(0,0,1,1);
-  --p-keyframes-bounce: p-keyframes-bounce;
-  --p-keyframes-fade-in: p-keyframes-fade-in;
-  --p-keyframes-pulse: p-keyframes-pulse;
-  --p-keyframes-spin: p-keyframes-spin;
-  --p-border-radius-05: 0.125rem;
-  --p-border-radius-1: 0.25rem;
-  --p-border-radius-2: 0.5rem;
-  --p-border-radius-3: 0.75rem;
-  --p-border-radius-4: 1rem;
-  --p-border-radius-5: 1.25rem;
-  --p-border-radius-6: 1.875rem;
-  --p-border-radius-base: 0.1875rem;
-  --p-border-radius-large: 0.375rem;
-  --p-border-radius-half: 50%;
-  --p-border-width-1: 0.0625rem;
-  --p-border-width-2: 0.125rem;
-  --p-border-width-3: 0.1875rem;
-  --p-border-width-4: 0.25rem;
-  --p-border-width-5: 0.3125rem;
-  --p-border-base: var(--p-border-width-1) solid var(--p-border-subdued);
-  --p-border-dark: var(--p-border-width-1) solid var(--p-border);
-  --p-border-transparent: var(--p-border-width-1) solid #0000;
-  --p-border-divider: var(--p-border-width-1) solid var(--p-divider);
-  --p-space-0: 0;
-  --p-space-025: 0.0625rem;
-  --p-space-05: 0.125rem;
-  --p-space-1: 0.25rem;
-  --p-space-2: 0.5rem;
-  --p-space-3: 0.75rem;
-  --p-space-4: 1rem;
-  --p-space-5: 1.25rem;
-  --p-space-6: 1.5rem;
-  --p-space-8: 2rem;
-  --p-space-10: 2.5rem;
-  --p-space-12: 3rem;
-  --p-space-16: 4rem;
-  --p-space-20: 5rem;
-  --p-space-24: 6rem;
-  --p-space-28: 7rem;
-  --p-space-32: 8rem;
-  --p-font-family-sans: -apple-system,BlinkMacSystemFont,"San Francisco","Segoe UI",Roboto,"Helvetica Neue",sans-serif;
-  --p-font-family-mono: ui-monospace,SFMono-Regular,"SF Mono",Consolas,"Liberation Mono",Menlo,monospace;
-  --p-font-size-1: 0.75rem;
-  --p-font-size-2: 0.8125rem;
-  --p-font-size-3: 0.875rem;
-  --p-font-size-4: 0.9375rem;
-  --p-font-size-5: 1rem;
-  --p-font-size-6: 1.0625rem;
-  --p-font-size-7: 1.25rem;
-  --p-font-size-8: 1.3125rem;
-  --p-font-size-9: 1.5rem;
-  --p-font-size-10: 1.625rem;
-  --p-font-size-11: 1.6875rem;
-  --p-font-size-12: 1.75rem;
-  --p-font-size-13: 2.625rem;
-  --p-font-weight-regular: 400;
-  --p-font-weight-medium: 500;
-  --p-font-weight-semibold: 600;
-  --p-font-weight-bold: 700;
-  --p-line-height-1: 1rem;
-  --p-line-height-2: 1.25rem;
-  --p-line-height-3: 1.5rem;
-  --p-line-height-4: 1.75rem;
-  --p-line-height-5: 2rem;
-  --p-line-height-6: 2.25rem;
-  --p-line-height-7: 2.75rem;
-  --p-z-1: 100;
-  --p-z-2: 400;
-  --p-z-3: 510;
-  --p-z-4: 512;
-  --p-z-5: 513;
-  --p-z-6: 514;
-  --p-z-7: 515;
-  --p-z-8: 516;
-  --p-z-9: 517;
-  --p-z-10: 518;
-  --p-z-11: 519;
-  --p-z-12: 520;
-  color-scheme: dark
+/* temporary */
+[data-diffy-attribute="search"].search-loading svg {
+  animation-name: ckw;
+  animation-duration: 2s;
+  fill: orange;
+  animation-iteration-count: infinite;
+}
+@keyframes ckw {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+[data-diffy-attribute="search"] svg {
+  fill: #2688ff;
+}
+
+[data-diffy-attribute] span {
+  font-size: 12px !important;
+}
+
+[data-diffy-attribute] [class*="Interior"], [data-diffy-attribute] [class*="PrimaryAction"] {
+  height: 1.2rem !important;
+}
+
+[id^="Collapsible-folder-"] ol {
+  margin-top: 1rem;
+}
+
+[data-diffy-attribute] [class*="PrimaryAction"] [class*="Prefix"] {
+  height: 16px;
+}
+
+[data-diffy-attribute] [class*="TrailingContent"] {
+  height: 12px;
+}
+
+[data-diffy-attribute="tablist"] {
+  height: 36px !important;
+  overflow: hidden;
 }

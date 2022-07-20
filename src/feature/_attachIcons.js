@@ -2,8 +2,11 @@
   attachIcons = () => {
     let searchIntervalNew = setInterval(() => {
 
-      let hasThemeIframe = document.querySelector(`[title="Online Store"]`).contentDocument.querySelector('[data-diffy-attribute="sidebar"]')
+      let hasThemeIframe = document.querySelector(`[title="Online Store"]`)
       if (!hasThemeIframe) return;
+
+      let hasSidebar = hasThemeIframe.contentDocument.querySelector('[data-diffy-attribute="sidebar"]')
+      if (!hasSidebar) return;
 
       clearInterval(searchIntervalNew);
 

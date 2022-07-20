@@ -821,4 +821,5 @@
 
 [data-diffy-attribute="tablist"] {
   height: 36px !important;
+  overflow: hidden;
 }

@@ -1,7 +1,12 @@
 (() => {
   startSearch = () => {
     let searchIntervalNew = setInterval(() => {
-      let frameContent = document.querySelector(`[title="Online Store"]`).contentDocument.querySelector('[placeholder="Search files..."]')
+
+      let hasThemeIframe = document.querySelector(`[title="Online Store"]`)
+      if (!hasThemeIframe) return
+
+
+      let frameContent = hasThemeIframe.contentDocument.querySelector('[placeholder="Search files..."]')
       if (!frameContent) return;
 
       clearInterval(searchIntervalNew);
