@@ -1,0 +1,55 @@
+.ͼ1 .cm-line {
+  display: block;
+  padding: 0 2px 0 4px;
+  font-family: Menlo, Monaco, "Courier New", monospace !important;
+  font-size: 12px !important;
+  line-height: 18px !important;
+}
+
+.cm-theme-light {
+  height: 100%;
+}
+
+[data-diffy-attribute="search"].search-loading svg {
+  animation-name: ckw;
+  animation-duration: 2s;
+  fill: orange;
+  animation-iteration-count: infinite;
+}
+@keyframes ckw {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+[data-diffy-attribute="search"] svg {
+  fill: #2688ff;
+}
+
+[data-diffy-attribute] span {
+  font-size: 12px !important;
+}
+
+[data-diffy-attribute] [class*="Interior"], [data-diffy-attribute] [class*="PrimaryAction"] {
+  height: 1.2rem !important;
+}
+
+[id^="Collapsible-folder-"] ol {
+  margin-top: 1rem;
+}
+
+[data-diffy-attribute] [class*="PrimaryAction"] [class*="Prefix"] {
+  height: 16px;
+}
+
+[data-diffy-attribute] [class*="TrailingContent"] {
+  height: 12px;
+}
+
+[data-diffy-attribute="tablist"] {
+  height: 36px !important;
+  overflow: hidden;
+}
