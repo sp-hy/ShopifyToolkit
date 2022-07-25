@@ -48,8 +48,3 @@
 [data-diffy-attribute] [class*="TrailingContent"] {
   height: 12px;
 }
-
-[data-diffy-attribute="tablist"] {
-  height: 36px !important;
-  overflow: hidden;
-}

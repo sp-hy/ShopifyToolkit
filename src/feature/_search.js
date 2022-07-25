@@ -18,9 +18,11 @@
 
       getAssets = (frameContent) => {
         // Get Asset list from server
-        $.ajax({
-          url: window.location.href.split("?")[0] + "/assets.json",
-        }).done(function (data) {
+        fetch(
+          window.location.href.split("?")[0] + "/assets.json",
+        )
+        .then((response) => response.json())
+        .then(function (data) {
           // Filter out assets that aren't in the allowed list
           let allowedExtensions = [".liquid", ".js", ".css", ".scss"];
           let filteredResponse = data.assets.filter((word) =>
@@ -31,26 +33,27 @@
         });
       };
 
+       getUserAsync = async (filteredResponse) => {
+        const result = []
+        const datas = 
+          filteredResponse.map(asset => {
+            fetch(
+                window.location.href.split("?")[0] +
+                "/assets.json?asset[key]=" +
+                asset.key
+            )
+            .then((response) => response.json())
+            .then(item => {
+              result.push(item)
+            })
+          })
+          return Promise.all(datas).then(() => result)
+        }
+
       getAssetData = (filteredResponse, frameContent) => {
-        // Ajax query for each asset URL
-        var requests = filteredResponse.map(function (asset) {
-          return $.ajax({
-            method: "GET",
-            url:
-              window.location.href.split("?")[0] +
-              "/assets.json?asset[key]=" +
-              asset.key,
-          });
-        });
 
-        // Fire once all ajax calls to asset files are complete
-        $.when(...requests).then((...responses) => {
-          let newResponses = responses.map((item) => {
-            return (item = item[0]);
-          });
-
-          createSearchField(newResponses, frameContent);
-        });
+      getUserAsync(filteredResponse)
+        .then(data => createSearchField(data, frameContent)); 
       };
 
       createSearchField = (assetArray, frameContent) => {
@@ -100,7 +103,7 @@
         let iFrameDocument = document.querySelector(`[title="Online Store"]`).contentWindow.document.body;
         let assetList = iFrameDocument.querySelectorAll('[aria-label="File picker"] li[data-diffy-attribute^="fileName-"]');
 
-        for (var item of assetList) {
+        for (let item of assetList) {
           let assetKey = item.getAttribute("data-diffy-attribute");
           assetKey = assetKey.slice(assetKey.indexOf('-') + 1);
 

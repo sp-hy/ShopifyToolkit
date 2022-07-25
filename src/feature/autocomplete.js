@@ -228,6 +228,12 @@ sendInputToCodeMirror = (snippet) => {
   destroySuggestions();
 };
 
+sendInputToCodeMirrorOld(input) {
+  let editor = document.querySelector("textarea");
+  editor.value = input;
+  editor.dispatchEvent(new Event("input"));
+}
+
 let javascript = {
   "alert--js": `alert('alert')`,
   "if--js": `if (condition) {

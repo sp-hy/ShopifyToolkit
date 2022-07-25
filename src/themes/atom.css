@@ -1,16 +1,19 @@
 :root {
   --background: rgb(45, 50, 59);
   --button: #2688ff;
-  --cm-operator: #c678dd;
+  --cm-def: #c678dd;
   --cm-bracket: #abb2bf;
   --cm-builtin: #61afef;
   --cm-comment: #5c6370;
-  --cm-keyword: #e06c75;
+  --cm-line: #e06c75;
+  --cm-liquid-assign: #e06c75;
+  --cm-keyword: #c678dd;
   --cm-liquid-atom: #d19a66;
-  --cm-property: #61afef;
+  --cm-property: #56b6c2;
+  --cm-qualifier: #d7ba7d;
   --cm-string: #98c379;
   --cm-string-2: #56b6c2;
-  --cm-variable: #e06c75;
+  --cm-variable: #d19a66;
   --cursor: #528bff;
   --file-overview-background: #2e323b;
   --search-border: #444;
@@ -20,256 +23,163 @@
   --tab-border-color: black;
   --tab-text-color: #ccc;
   --text-color: #fff;
-  --webkit-scrollbar-thumb: rgba(121, 121, 121, 0.4);
-  --webkit-scrollbar-thumb-hover: rgba(100, 100, 100, 0.7);
 }
 
-.CodeMirror,
-.CodeMirror-lines .CodeMirror-gutters {
-  background-color: var(--background) !important;
-  font-family: Menlo, Monaco, "Courier New", monospace !important;
-  font-weight: normal !important;
-  font-size: 12px !important;
-  font-feature-settings: "liga" 0, "calt" 0 !important;
-  line-height: 18px !important;
-  letter-spacing: 0px !important;
+[p-color-scheme=dark] {
+  --p-surface: rgb(33, 37, 43) !important;
+  --p-background: rgb(27, 29, 35) !important
 }
 
-.CodeMirror-activeline-background {
+
+[data-diffy-attribute*=".js"] .cm-line, [data-diffy-attribute*=".css"] .cm-line, [data-diffy-attribute*=".scss"] .cm-line {
+  color: #abb2bf !important;
+}
+
+.cm-panels {
+  filter: invert();
+}
+
+/* Overrides */
+.cm-editor {
+  background: var(--background) !important;
+}
+
+.ͼ1 .cm-line {
+  color: var(--cm-line);
+}
+
+.ͼ2 .cm-activeLine {
   background-color: transparent !important;
 }
 
-.CodeMirror-cursor {
-  border-left: 1px solid var(--cursor) !important;
+.ͼ1.cm-editor.cm-focused {
+  outline: 1px dotted #212121;
 }
 
-.CodeMirror-gutter-filler,
-.CodeMirror-scrollbar-filler {
-  display: none !important;
+.ͼ2 .cm-activeLineGutter {
+  color: white !important;
+  background-color: transparent;
 }
 
-.CodeMirror-gutters {
-  background-color: var(--background) !important;
-  border-right: 2px solid var(--background) !important;
+.ͼ1 .cm-cursor,
+.ͼ1 .cm-dropCursor {
+  border-left: 1px solid white !important;
 }
 
-.CodeMirror-lines,
-.CodeMirror-gutters,
-.template-editor-tab-bar {
-  box-shadow: #000 0 6px 6px -6px inset !important;
+.ͼ1 .cm-gutters {
+  background: var(--background) !important;
+  border-right: none;
 }
 
-.CodeMirror-selected {
-  background: var(--selected) !important;
+.ͼ2.cm-focused .cm-selectionBackground, .ͼ2 .cm-selectionBackground {
+  background: var(--selected);
 }
 
-.asset-search .next-input--stylized {
-  border: var(--search-border) 1px solid;
-  border-top: var(--search-border) 1px solid !important;
+.ͼ1i {
+  color: var(--cm-keyword);
 }
 
-.asset-search .next-input--stylized:focus {
-  border: var(--search-border) 1px solid;
-  box-shadow: none;
-  outline: none;
-}
-
-.asset-search input,
-.asset-search .next-input--stylized {
-  background-color: var(--background) !important;
-  border: var(--search-border) 1px solid;
-}
-
-.asset-search,
-.template-editor-tab-bar,
-.template-editor-layout__sidebar {
-  background-color: var(--sidebar) !important;
-}
-
-.cm-builtin {
-  color: var(--cm-builtin) !important;
-}
-
-.cm-comment {
-  color: var(--cm-comment) !important;
-}
-
-.cm-def,
-.cm-variable,
-.cm-variable-2,
-.cm-liquid-word.cm-liquid-tag-markup.cm-liquid-method.cm-liquid,
-.cm-liquid-word.cm-liquid-output-markup.cm-liquid-variable.cm-liquid {
-  color: var(--cm-variable) !important;
-}
-
-.cm-keyword {
-  color: #c678dd !important;
-}
-
-.cm-liquid-word.cm-liquid-tag-markup.cm-liquid,
-.cm-liquid-word.cm-liquid-tag-markup.cm-liquid-variable.cm-liquid,
-.cm-string-2 {
-  color: var(--cm-string-2) !important;
-}
-
-.cm-liquid-word.cm-liquid-tag-markup.cm-liquid-operator.cm-liquid {
-  color: var(--cm-operator) !important;
-}
-
-.cm-liquid-word.cm-liquid-output-markup.cm-liquid-filter.cm-liquid,
-.cm-liquid-output-markup.cm-liquid {
-  color: var(--cm-string-2) !important;
-}
-
-.cm-operator,
-.CodeMirror-code,
-.cm-liquid-tag-markup.cm-liquid,
-.cm-liquid-markup-delimiter.cm-liquid,
-.template-editor-tab .template-editor-tab-filename {
-  color: var(--tab-text-color) !important;
-}
-
-.cm-property,
-.cm-liquid-word.cm-liquid-tag-markup.cm-liquid,
-.cm-liquid-word.cm-liquid-tag-markup.cm-liquid-variable.cm-liquid {
-  color: var(--cm-property) !important;
-}
-
-.cm-qualifier,
-.cm-attribute,
-.cm-liquid-atom.cm-liquid-tag-markup.cm-liquid,
-.cm-number {
-  color: var(--cm-liquid-atom) !important;
-}
-
-.cm-string,
-.cm-variable-3,
-.cm-liquid-string,
-.cm-liquid-string.cm-liquid-tag-markup.cm-liquid {
+.ͼ1j {
   color: var(--cm-string) !important;
 }
 
-.cm-tag,
-.cm-atom,
-.cm-meta,
-.cm-liquid-word.cm-liquid-tag-markup.cm-liquid-tag-name.cm-liquid,
-.cm-liquid-word.cm-liquid-tag-markup.cm-liquid-endtag-name.cm-liquid {
-  color: var(--cm-keyword) !important;
+.ͼ1k {
+  color: var(--cm-comment) !important;
 }
 
-.cm-tag.cm-bracket {
+.ͼ1l {
+  color: var(--cm-liquid-atom);
+}
+
+.ͼ1m {
+  color: var(--cm-keyword) !important;
+  font-weight: bold;
+}
+
+.ͼ1n {
+  color: var(--cursor) !important;
+}
+
+.ͼ1o {
+  color: var(--cm-liquid-assign) !important;
+}
+
+.ͼ1p {
+  color: var(--cursor) !important;
+}
+
+.ͼ1q {
   color: var(--cm-bracket) !important;
 }
 
-.file-overview,
-.template-editor-titlebar {
-  background-color: var(--file-overview-background) !important;
-  border-left: var(--cm-bracket) 3px solid !important;
+.ͼ1r {
+  color: var(--cm-variable) !important;
 }
 
-.fresh-ui .ui-breadcrumb:hover {
-  background: var(--cm-bracket) !important;
+.ͼ1s {
+  color: var(--cm-property) !important;
 }
 
-.template-editor-layout__main {
-  background-color: var(--background) !important;
+.ͼ1t {
+  color: var(--cm-keyword) !important;
 }
 
-.template-editor-layout__sidebar {
-  border-right: var(--sidebar) !important;
+.ͼ15 {
+  background-color: #fff;
 }
 
-.template-editor-tab {
-  background-color: var(--tab-background) !important;
-  border-bottom: 1px solid black;
+.ͼ5 {
+  color: var(--cm-property);
 }
 
-.template-editor-tab-bar {
-  border: var(--background) 1px solid !important;
+.ͼb {
+  color: var(--cm-def);
 }
 
-.template-editor-tab.active,
-.asset-search input {
-  background-color: var(--background) !important;
-  color: var(--text-color);
+.ͼc {
+  color: var(--cm-def);
 }
 
-.template-editor-titlebar__actions .ui-button {
-  background: var(--button) !important;
-  margin: 0.2em;
+.ͼd {
+  color: var(--cm-liquid-atom);
 }
 
-.ui-button,
-.theme-asset-name,
-.ui-breadcrumb__item,
-.asset-listing-theme-file,
-.asset-listing-heading-value,
-#asset-list .next-input--search,
-.template-editor-titlebar__title,
-.active .template-editor-tab-filename {
-  color: var(--text-color) !important;
+.ͼe {
+  color: var(--cm-string);
 }
 
-.ui-button-group .ui-button.ui-button--size-small {
-  background: var(--button) !important;
-  border: none !important;
-  box-shadow: none;
-  opacity: 1 !important;
+.ͼf {
+  color: var(--cm-string);
 }
 
-.ui-button-group .ui-button.ui-button--size-small:disabled {
-  opacity: 0.6 !important;
+.ͼg {
+  color: var(--cm-builtin);
 }
 
-::-webkit-scrollbar {
-  height: 12px !important;
-  width: 12px !important;
+.ͼh {
+  color: #30a;
 }
 
-::-webkit-scrollbar-thumb {
-  background: var(--webkit-scrollbar-thumb) !important;
+.ͼi {
+  color: var(--cm-keyword);
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: var(--webkit-scrollbar-thumb-hover) !important;
+.ͼj {
+  color: var(--cm-qualifier);
 }
 
-::-webkit-scrollbar-track {
-  background: none !important;
-  border: 1px solid var(--webkit-scrollbar-thumb) !important;
+.ͼk {
+  color: var(--cm-property);
 }
 
-.template-editor-tab {
-  border-left: var(--tab-border-color) 1px solid !important;
-  border-right: var(--tab-border-color) 1px solid !important;
+.ͼl {
+  color: var(--cm-property);
 }
 
-.template-editor-tab {
-  border-top: 1px solid var(--sidebar);
+.ͼm {
+  color: var(--cm-comment);
 }
 
-#autocomplete {
-  color: white;
-  background: var(--tab-background);
-  border: 1px solid var(--search-border);
-}
-
-#autocomplete li.active,
-[data-word]:hover {
-  background: #00304c;
-}
-
-.input-highlight {
-  color: var(--button);
-}
-
-.CodeMirror-dialog,
-.CodeMirror-dialog button,
-.CodeMirror-dialog .next-input--stylized {
-  background: var(--sidebar) !important;
-  border: 1px solid var(--search-border) !important;
-}
-
-.CodeMirror-dialog input {
-  color: white !important;
+.ͼn {
+  color: #f00;
 }
