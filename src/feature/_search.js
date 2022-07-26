@@ -54,10 +54,9 @@
       }
 
       getAssetData = (filteredResponse, frameContent) => {
-
-      // Fetch asset data
-      getUserAsync(filteredResponse)
-        .then(data => createSearchField(data, frameContent)); 
+        // Fetch asset data
+        getUserAsync(filteredResponse)
+          .then(data => createSearchField(data, frameContent)); 
       };
 
       createSearchField = (assetArray, searchElement) => {

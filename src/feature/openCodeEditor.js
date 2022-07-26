@@ -2,17 +2,8 @@
 // Gets theme id from Shopify object and opens the code editor for current theme
 
 (function () {
-  let injectScript = `
-  (function() {
-    let shopURL = Shopify.shop;  
-    let themeID = Shopify.theme.id;  
-
-    window.open("https://" + shopURL + "/admin/themes/" + themeID)
-  })();
-`;
-
   let script = document.createElement("script");
-  script.textContent = injectScript;
+  script.src = chrome.runtime.getURL('src/feature/openCodeEditor-content.js');
   (document.head || document.documentElement).appendChild(script);
   script.remove();
 })();

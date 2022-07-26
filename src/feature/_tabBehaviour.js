@@ -17,7 +17,7 @@
 
       // If stacked tabs is enabled
       if (theme == 'tabs') {
-        let path = chrome.extension.getURL(`src/themes/${theme}.css`);
+        let path = chrome.runtime.getURL(`src/themes/${theme}.css`);
         let iframeTo = document.querySelector(`[title="Online Store"]`);
         var cssLink = document.createElement("link");
         cssLink.href = path;
