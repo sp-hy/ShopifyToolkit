@@ -53,29 +53,41 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   let openResourceButton = document.querySelector(".button-resource");
   openResourceButton.addEventListener("click", () => {
-    chrome.runtime.sendMessage({
-      type: "openResource",
-    });
+    chrome.tabs.query({active: true, currentWindow: true}).then(([tab]) => {
+      chrome.scripting.executeScript({
+        target: {tabId: tab.id},
+        files: ['src/feature/openResource.js']
+      });
+    })
   });
 
   let openAdmin = document.querySelector(".button-admin");
   openAdmin.addEventListener("click", () => {
-    chrome.runtime.sendMessage({
-      type: "openAdmin",
-    });
+    chrome.tabs.query({active: true, currentWindow: true}).then(([tab]) => {
+      chrome.scripting.executeScript({
+        target: {tabId: tab.id},
+        files: ['src/feature/openAdmin.js']
+      });
+    })
   });
 
   let openThemeEditor = document.querySelector(".button-theme-editor");
   openThemeEditor.addEventListener("click", () => {
-    chrome.runtime.sendMessage({
-      type: "openThemeEditor",
-    });
+    chrome.tabs.query({active: true, currentWindow: true}).then(([tab]) => {
+      chrome.scripting.executeScript({
+        target: {tabId: tab.id},
+        files: ['src/feature/openThemeEditor.js']
+      });
+    })
   });
 
   let openCodeEditor = document.querySelector(".button-code-editor");
   openCodeEditor.addEventListener("click", () => {
-    chrome.runtime.sendMessage({
-      type: "openCodeEditor",
-    });
+    chrome.tabs.query({active: true, currentWindow: true}).then(([tab]) => {
+      chrome.scripting.executeScript({
+        target: {tabId: tab.id},
+        files: ['src/feature/openCodeEditor.js']
+      });
+    })
   });
 });

@@ -13,7 +13,7 @@
       clearInterval(iconIntervalListener);
 
       // Inject icon CSS stylesheet into iframe
-      let path = chrome.extension.getURL('src/themes/icons.css');
+      let path = chrome.runtime.getURL('src/themes/icons.css');
       let iframeTo = document.querySelector(`[title="Online Store"]`)
       var cssLink = document.createElement("link") 
       cssLink.href = path

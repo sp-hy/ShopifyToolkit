@@ -1,20 +1,14 @@
 {
   "name": "Liquify - Shopify Enhanced Code Search/Editor",
-  "version": "1.0.0",
-  "manifest_version": 2,
+  "version": "1.1.0",
+  "manifest_version": 3,
   "description": "Code Search / Themes / Editor Enhancements",
   "homepage_url": "https://github.com/lukechadwick/Liquify",
   "icons": {
     "128": "icons/icon128.png"
   },
-  "background": {
-    "scripts": [
-      "src/bg/background.js"
-    ],
-    "persistent": true
-  },
   "options_page": "src/options/index.html",
-  "browser_action": {
+  "action": {
     "default_icon": "icons/icon128.png",
     "default_title": "Liquify",
     "default_popup": "src/popup/popup.html"
@@ -22,6 +16,9 @@
   "permissions": [
     "storage",
     "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
     "https://*.myshopify.com/admin/*"
   ],
   "content_scripts": [
@@ -37,10 +34,19 @@
     }
   ],
   "web_accessible_resources": [
-    "src/themes/vscode.css",
-    "src/themes/atom.css",
-    "src/themes/icons.css",
-    "src/themes/common.css",
-    "src/themes/tabs.css"
+    {
+      "resources": [
+        "src/feature/openAdmin-content.js",
+        "src/feature/openResource-content.js",
+        "src/feature/openThemeEditor-content.js",
+        "src/feature/openCodeEditor-content.js",
+        "src/themes/vscode.css",
+        "src/themes/atom.css",
+        "src/themes/icons.css",
+        "src/themes/common.css",
+        "src/themes/tabs.css"
+      ],
+      "matches": ["<all_urls>"]
+    }
   ]
 }
