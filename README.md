@@ -15,10 +15,11 @@ Once installed you'll see the Liquify extension on the toolbar:
 ## Features
 
 - Themes/Icons -- Currently a VSCode/Atom theme, tabs/files/autocomplete suggestions will also show an icon for the type of file/suggestion.
-- Autocomplete -- Code autocomplete suggestions as you type. Press the ` key to cycle through suggestions, and the 1 key to select, or click with the mouse.
 - Enhanced search -- This will search both file names and file contents for matches
-- Auto fullscreen -- The editor will automatically enter fullscreen mode on load.
-- SlimUI -- rearranged UI elements to give more space to the code window.
+- Enhanced tabs -- Rearrange editor tabs, allow tab stacking instad of scroll
+- Layout changes -- Changes to layout/sizes
+- Autocomplete -- Code autocomplete suggestions as you type. Press the ` key to cycle through suggestions, and the 1 key to select, or click with the mouse.
+
 
 ## Contributing
 
