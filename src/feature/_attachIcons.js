@@ -1,15 +1,18 @@
 (() => {
   attachIcons = () => {
-    let searchIntervalNew = setInterval(() => {
-
+    // Create setInterval to act as a listener until theme editor elements exist
+    let iconIntervalListener = setInterval(() => {
+      // Locate iframe and sidebar
       let hasThemeIframe = document.querySelector(`[title="Online Store"]`)
       if (!hasThemeIframe) return;
 
       let hasSidebar = hasThemeIframe.contentDocument.querySelector('[data-diffy-attribute="sidebar"]')
       if (!hasSidebar) return;
 
-      clearInterval(searchIntervalNew);
+      // Element found, clear interval
+      clearInterval(iconIntervalListener);
 
+      // Inject icon CSS stylesheet into iframe
       let path = chrome.extension.getURL('src/themes/icons.css');
       let iframeTo = document.querySelector(`[title="Online Store"]`)
       var cssLink = document.createElement("link") 
@@ -18,8 +21,8 @@
       cssLink .type = "text/css"; 
       iframeTo.contentWindow.document.body.appendChild(cssLink);
 
-      // Get list of file elements
       setInterval(() => {
+        // Locate iframe and file list
         let iFrameDocument = document.querySelector(`[title="Online Store"]`);
         if (!iFrameDocument) return
 
@@ -57,7 +60,7 @@
       }, 500);
 
       setInterval(() => {
-        // Get list of open tabs
+        // Locate iframe and tab list
         let iFrameDocument = document.querySelector(`[title="Online Store"]`);
         if (!iFrameDocument) return;
 

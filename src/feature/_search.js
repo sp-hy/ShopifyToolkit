@@ -1,13 +1,16 @@
 (() => {
   startSearch = () => {
-    let searchIntervalNew = setInterval(() => {
+    // Create setInterval to act as a listener until theme editor elements exist
+    let searchIntervalListener = setInterval(() => {
+      // Locate iframe and file search element
       let hasThemeIframe = document.querySelector(`[title="Online Store"]`)
       if (!hasThemeIframe) return
 
       let frameContent = hasThemeIframe.contentDocument.querySelector('[placeholder="Search files..."]')
       if (!frameContent) return;
 
-      clearInterval(searchIntervalNew);
+      // Element found, clear interval
+      clearInterval(searchIntervalListener);
 
       // Set loading message
       let searchInput = frameContent;
@@ -32,8 +35,9 @@
         });
       };
 
-       getUserAsync = async (filteredResponse) => {
+      getUserAsync = async (filteredResponse) => {
         const result = []
+        // Batch request all valid asset files asynchronously, then add them to the results array 
         const datas = 
           filteredResponse.map(asset => {
             return fetch(
@@ -46,11 +50,12 @@
               result.push(item)
             })
           })
-          return Promise.all(datas).then(() => result)
-        }
+        return Promise.all(datas).then(() => result)
+      }
 
       getAssetData = (filteredResponse, frameContent) => {
 
+      // Fetch asset data
       getUserAsync(filteredResponse)
         .then(data => createSearchField(data, frameContent)); 
       };
@@ -129,6 +134,9 @@
       getAssets(frameContent);
     }, 500);
   }
+
+  // On load begin search
+  startSearch();
 
   // Detect page change
   let previousUrl = '';

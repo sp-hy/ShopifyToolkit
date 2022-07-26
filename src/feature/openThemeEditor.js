@@ -1,3 +1,6 @@
+// Extension can't access local page variables/context so this snippet is injected and executing
+// Gets theme id from Shopify object and opens the code editor for current theme
+
 (function () {
   let injectScript = `
   (function() {

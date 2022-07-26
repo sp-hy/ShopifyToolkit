@@ -1,14 +1,18 @@
 (() => {
   setTheme = (theme) => {
+    // Create setInterval to act as a listener until theme editor elements exist
     let searchIntervalNew = setInterval(() => {
+      // Locate iframe and sidebar
       let hasThemeIframe = document.querySelector(`[title="Online Store"]`)
       if (!hasThemeIframe) return;
 
       let hasThemeContent = hasThemeIframe.contentDocument.querySelector('[data-diffy-attribute="sidebar"]')
       if (!hasThemeContent) return;
 
+      // Element found, clear interval
       clearInterval(searchIntervalNew);
 
+      // Inject theme CSS stylesheet into iframe
       let path = chrome.extension.getURL(`src/themes/${theme}.css`);
       let iframeTo = document.querySelector(`[title="Online Store"]`);
       var cssLink = document.createElement("link");

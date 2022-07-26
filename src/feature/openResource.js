@@ -1,3 +1,6 @@
+// Extension can't access local page variables/context so this snippet is injected and executing
+// Gets resource ID from the __st object, decides what kind of page based on the URL and opens the appropriate admin page
+
 (function () {
   let injectScript = `
     (function() {
