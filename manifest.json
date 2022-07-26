@@ -18,9 +18,6 @@
     "activeTab",
     "scripting"
   ],
-  "host_permissions": [
-    "https://*.myshopify.com/admin/*"
-  ],
   "content_scripts": [
     {
       "matches": ["https://*.myshopify.com/admin/*"],
