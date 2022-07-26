@@ -1,14 +1,16 @@
 {
-  "name": "Liquify - Shopify Theme Code Editor Enhancer",
-  "version": "0.9.5",
+  "name": "Liquify - Shopify Theme Code Search + Editor Enhancements",
+  "version": "1.0.0",
   "manifest_version": 2,
-  "description": "Enhance the functionality of the Shopify theme code editor",
+  "description": "Code Search / Themes / Editor Enhancements",
   "homepage_url": "https://github.com/lukechadwick/Liquify",
   "icons": {
     "128": "icons/icon128.png"
   },
   "background": {
-    "scripts": ["src/bg/background.js"],
+    "scripts": [
+      "src/bg/background.js"
+    ],
     "persistent": true
   },
   "options_page": "src/options/index.html",
@@ -20,29 +22,25 @@
   "permissions": [
     "storage",
     "activeTab",
-    "https://*.myshopify.com/admin/themes/*"
+    "https://*.myshopify.com/admin/*"
   ],
   "content_scripts": [
     {
-      "matches": ["https://*.myshopify.com/admin/themes/*"],
-      "js": [
-        "thirdParty/jquery.min.js",
-        "src/feature/autoFullScreen.js",
-        "src/feature/slimUI.js",
-        "src/feature/applyTheme.js",
-        "src/feature/attachIcons.js",
-        "src/feature/search.js",
-        "src/feature/autoComplete.js",
-        "src/feature/lineWrap.js",
-        "src/feature/tabBehaviour.js"
-      ]
-    },
-    {
       "matches": ["https://*.myshopify.com/admin/*"],
       "js": [
+        "src/feature/_search.js",
+        "src/feature/_theme.js",
+        "src/feature/_attachIcons.js",
+        "src/feature/_tabBehaviour.js",
         "src/feature/wideAdmin.js"
       ]
     }
   ],
-  "web_accessible_resources": []
+  "web_accessible_resources": [
+    "src/themes/vscode.css",
+    "src/themes/atom.css",
+    "src/themes/icons.css",
+    "src/themes/common.css",
+    "src/themes/tabs.css"
+  ]
 }

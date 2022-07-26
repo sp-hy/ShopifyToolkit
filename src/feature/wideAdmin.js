@@ -1,5 +1,3 @@
-let selector = 
-
 // Fetch setting and apply
 chrome.storage.sync.get("wideAdmin", function (data) {
   if (data.wideAdmin) applyWidth();

@@ -1,10 +1,18 @@
-.template-editor-tab-bar {
-  height: auto !important;
+[data-diffy-attribute="tablist"] {
+  display: inline-table;
 }
-.template-editor-tabs {
-  display: block !important;
+
+[data-diffy-attribute="tablist"] [role="presentation"] {
+  display: inline-table;
+  position: relative;
 }
-.template-editor-tabs {
-  overflow-x: visible !important;
-  overflow-y: visible !important;
+
+[data-diffy-attribute="tablist"] [role="presentation"] button:nth-child(2) {
+  height: 1rem;
+  padding: 0;
+  width: 1rem;
+  position: absolute;
+  top: 0.5rem;
+  right: 0;
+  fill: grey;
 }

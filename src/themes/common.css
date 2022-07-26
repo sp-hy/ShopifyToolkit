@@ -1,0 +1,95 @@
+/* Autocomplete */
+#autocomplete {
+  min-width: 200px;
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  width: 400px;
+  max-height: 300px;
+  overflow-y: scroll;
+  opacity: 0.95;
+}
+#autocomplete li {
+  list-style: none;
+}
+.input-highlight {
+  font-weight: bold;
+}
+#autocomplete {
+  color: white;
+  background: var(--tab-background);
+  border: 1px solid var(--search-border);
+}
+#autocomplete li.active,
+[data-word]:hover {
+  background: #00304c;
+}
+
+.ͼ1 .cm-line {
+  display: block;
+  padding: 0 2px 0 4px;
+  font-family: Menlo, Monaco, "Courier New", monospace !important;
+  font-size: 12px !important;
+  line-height: 18px !important;
+}
+
+.cm-theme-light {
+  height: 100%;
+}
+
+[data-diffy-attribute="search"].search-loading svg {
+  animation-name: ckw;
+  animation-duration: 2s;
+  fill: orange;
+  animation-iteration-count: infinite;
+}
+@keyframes ckw {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+[data-diffy-attribute="search"] svg {
+  fill: #2688ff;
+}
+
+[data-diffy-attribute] span {
+  font-size: 12px !important;
+}
+
+[data-diffy-attribute] [class*="Interior"], [data-diffy-attribute] [class*="PrimaryAction"], [data-diffy-attribute] [class*="_Action_"] {
+  height: 1.2rem !important;
+}
+
+[data-diffy-attribute^="folder"] {
+  margin-top: 1rem !important;
+}
+
+[data-diffy-attribute^="folder"] ol {
+  margin-top: 0.3rem !important;
+}
+[data-diffy-attribute^="folder"] li {
+  margin-top: 1px !important;
+}
+
+
+
+[data-diffy-attribute] [class*="PrimaryAction"] [class*="Prefix"] {
+  height: 16px;
+}
+
+[data-diffy-attribute] [class*="TrailingContent"] {
+  height: 12px;
+}
+
+.cm-scroller {
+  order: 10 !important;
+}
+
+.cm-editor .cm-panels.cm-panels-bottom {
+  font-size: 16px;
+}

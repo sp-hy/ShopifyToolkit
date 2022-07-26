@@ -1,3 +1,6 @@
+// Extension can't access local page variables/context so this snippet is injected and executing
+// Opens /admin page for current store
+
 (function () {
   let injectScript = `
   (function() {
