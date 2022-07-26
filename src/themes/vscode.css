@@ -29,6 +29,10 @@
   background: var(--background) !important;
 }
 
+button[name="close"] {
+  color: black;
+}
+
 .cm-panels {
   filter: invert();
 }

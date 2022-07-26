@@ -1,10 +1,8 @@
 (() => {
   startSearch = () => {
     let searchIntervalNew = setInterval(() => {
-
       let hasThemeIframe = document.querySelector(`[title="Online Store"]`)
       if (!hasThemeIframe) return
-
 
       let frameContent = hasThemeIframe.contentDocument.querySelector('[placeholder="Search files..."]')
       if (!frameContent) return;
@@ -15,8 +13,9 @@
       let searchInput = frameContent;
       searchInput.setAttribute("placeholder", "Enhanced search loading...");
       searchInput.closest('[data-diffy-attribute="search"]').classList.add("search-loading");
-
-      getAssets = (frameContent) => {
+      searchInput.disabled = true;
+      
+      getAssets = (searchInput) => {
         // Get Asset list from server
         fetch(
           window.location.href.split("?")[0] + "/assets.json",
@@ -29,7 +28,7 @@
             allowedExtensions.some((v) => word.key.includes(v))
           );
 
-          getAssetData(filteredResponse, frameContent);
+          getAssetData(filteredResponse, searchInput);
         });
       };
 
@@ -37,7 +36,7 @@
         const result = []
         const datas = 
           filteredResponse.map(asset => {
-            fetch(
+            return fetch(
                 window.location.href.split("?")[0] +
                 "/assets.json?asset[key]=" +
                 asset.key
@@ -56,14 +55,14 @@
         .then(data => createSearchField(data, frameContent)); 
       };
 
-      createSearchField = (assetArray, frameContent) => {
-        frameContent.closest('[data-diffy-attribute="search"]').classList.remove("search-loading");
+      createSearchField = (assetArray, searchElement) => {
+        searchElement.closest('[data-diffy-attribute="search"]').classList.remove("search-loading");
         
         // Clone and replace search element to remove event listeners
-        let searchParent = frameContent.parentNode;
+        let searchParent = searchElement.parentNode;
         const newItem = document.createElement('div');
         newItem.innerHTML = '<input id="liquify-search" placeholder="Enhanced search loading..." autocomplete="off" class="Polaris-TextField__Input_30ock Polaris-TextField__Input--hasClearButton_15k6h search-loading" type="search" aria-labelledby="PolarisTextField2Label PolarisTextField2-Prefix" aria-invalid="false" value="">';
-        frameContent.parentNode.replaceChild(newItem.firstElementChild, frameContent);
+        searchElement.parentNode.replaceChild(newItem.firstElementChild, searchElement);
 
         // Set properties of new search
         let searchInput = searchParent.querySelector('#liquify-search')
@@ -130,8 +129,6 @@
       getAssets(frameContent);
     }, 500);
   }
-
-  startSearch();
 
   // Detect page change
   let previousUrl = '';

@@ -20,8 +20,10 @@
 
       // Get list of file elements
       setInterval(() => {
-        let iFrameDocument = document.querySelector(`[title="Online Store"]`).contentDocument;
-        let fileList = iFrameDocument.querySelectorAll('[aria-label="File picker"] li[data-diffy-attribute^="fileName-"]');
+        let iFrameDocument = document.querySelector(`[title="Online Store"]`);
+        if (!iFrameDocument) return
+
+        let fileList = iFrameDocument.contentDocument.querySelectorAll('[aria-label="File picker"] li[data-diffy-attribute^="fileName-"]');
         // Apply icon classes to file elements
         for (let file of fileList) {
           let fileIcon = file.querySelector("svg");
@@ -56,8 +58,10 @@
 
       setInterval(() => {
         // Get list of open tabs
-        let iFrameDocument = document.querySelector(`[title="Online Store"]`).contentDocument;
-        let tabList = iFrameDocument.querySelectorAll('[data-diffy-attribute="tablist"] [data-diffy-attribute]');
+        let iFrameDocument = document.querySelector(`[title="Online Store"]`);
+        if (!iFrameDocument) return;
+
+        let tabList = iFrameDocument.contentDocument.querySelectorAll('[data-diffy-attribute="tablist"] [data-diffy-attribute]');
 
         // Apply icon classes tabs
         for (let tab of tabList) {
@@ -85,9 +89,7 @@
       }, 500);
     }, 500);
   }
-  
-  attachIcons();
-  
+
   // Detect page change
   let previousUrl = '';
   const observer = new MutationObserver(() => {

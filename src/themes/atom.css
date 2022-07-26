@@ -30,6 +30,9 @@
   --p-background: rgb(27, 29, 35) !important
 }
 
+button[name="close"] {
+  color: black;
+}
 
 [data-diffy-attribute*=".js"] .cm-line, [data-diffy-attribute*=".css"] .cm-line, [data-diffy-attribute*=".scss"] .cm-line {
   color: #abb2bf !important;
