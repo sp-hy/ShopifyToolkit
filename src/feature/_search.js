@@ -3,7 +3,7 @@
     // Create setInterval to act as a listener until theme editor elements exist
     let searchIntervalListener = setInterval(() => {
       // Locate iframe and file search element
-      let hasThemeIframe = document.querySelector(`[title="Online Store"]`)
+      let hasThemeIframe = document.querySelector(`main iframe`)
       if (!hasThemeIframe) return
 
       let frameContent = hasThemeIframe.contentDocument.querySelector('[placeholder="Search files..."]')
@@ -76,7 +76,7 @@
         // On type event listener
         searchInput.addEventListener('input', e => {
           // Open all folders so all files render
-          let iFrameDocument = document.querySelector(`[title="Online Store"]`).contentWindow.document.body;
+          let iFrameDocument = document.querySelector(`main iframe`).contentWindow.document.body;
           let collapsibles = iFrameDocument.querySelectorAll('[id^=Collapsible-folder-][aria-hidden="true"]')
           collapsibles.forEach(collapsible => {
             collapsible.parentElement.querySelector('button').click()
@@ -103,7 +103,7 @@
       };
 
       filterFileList = (fileList, searchTerm) => {
-        let iFrameDocument = document.querySelector(`[title="Online Store"]`).contentWindow.document.body;
+        let iFrameDocument = document.querySelector(`main iframe`).contentWindow.document.body;
         let assetList = iFrameDocument.querySelectorAll('[aria-label="File picker"] li[data-diffy-attribute^="fileName-"]');
 
         for (let item of assetList) {

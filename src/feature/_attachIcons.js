@@ -3,7 +3,7 @@
     // Create setInterval to act as a listener until theme editor elements exist
     let iconIntervalListener = setInterval(() => {
       // Locate iframe and sidebar
-      let hasThemeIframe = document.querySelector(`[title="Online Store"]`)
+      let hasThemeIframe = document.querySelector(`main iframe`)
       if (!hasThemeIframe) return;
 
       let hasSidebar = hasThemeIframe.contentDocument.querySelector('[data-diffy-attribute="sidebar"]')
@@ -14,7 +14,7 @@
 
       // Inject icon CSS stylesheet into iframe
       let path = chrome.runtime.getURL('src/themes/icons.css');
-      let iframeTo = document.querySelector(`[title="Online Store"]`)
+      let iframeTo = document.querySelector(`main iframe`)
       var cssLink = document.createElement("link") 
       cssLink.href = path
       cssLink .rel = "stylesheet"; 
@@ -23,7 +23,7 @@
 
       setInterval(() => {
         // Locate iframe and file list
-        let iFrameDocument = document.querySelector(`[title="Online Store"]`);
+        let iFrameDocument = document.querySelector(`main iframe`);
         if (!iFrameDocument) return
 
         let fileList = iFrameDocument.contentDocument.querySelectorAll('[aria-label="File picker"] li[data-diffy-attribute^="fileName-"]');
@@ -61,7 +61,7 @@
 
       setInterval(() => {
         // Locate iframe and tab list
-        let iFrameDocument = document.querySelector(`[title="Online Store"]`);
+        let iFrameDocument = document.querySelector(`main iframe`);
         if (!iFrameDocument) return;
 
         let tabList = iFrameDocument.contentDocument.querySelectorAll('[data-diffy-attribute="tablist"] [data-diffy-attribute]');

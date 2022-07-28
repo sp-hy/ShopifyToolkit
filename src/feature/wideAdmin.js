@@ -38,7 +38,7 @@ applyWidth = () => {
     }
 
     // themes page iframe
-    let themeIframe = document.querySelector('[title="Online Store"]');
+    let themeIframe = document.querySelector('main iframe');
     if (themeIframe){
       let elmnt = themeIframe.contentWindow.document.querySelector('.Polaris-Page_yisnh')
       if (elmnt)

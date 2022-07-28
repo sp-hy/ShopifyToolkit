@@ -13,7 +13,7 @@
   autoComplete = () => {
     let autoCompleteInverval = setInterval(() => {
 
-      let hasThemeIframe = document.querySelector(`[title="Online Store"]`)
+      let hasThemeIframe = document.querySelector(`main iframe`)
       if (!hasThemeIframe) return
 
       let frameContent = hasThemeIframe.contentDocument.querySelector('.cm-editor')
