@@ -3,7 +3,7 @@
     // Create setInterval to act as a listener until theme editor elements exist
     let searchIntervalNew = setInterval(() => {
       // Locate iframe and sidebar
-      let hasThemeIframe = document.querySelector(`[title="Online Store"]`)
+      let hasThemeIframe = document.querySelector(`main iframe`)
       if (!hasThemeIframe) return;
 
       let hasThemeContent = hasThemeIframe.contentDocument.querySelector('[data-diffy-attribute="sidebar"]')
@@ -14,7 +14,7 @@
 
       // Inject theme CSS stylesheet into iframe
       let path = chrome.runtime.getURL(`src/themes/${theme}.css`);
-      let iframeTo = document.querySelector(`[title="Online Store"]`);
+      let iframeTo = document.querySelector(`main iframe`);
       var cssLink = document.createElement("link");
       cssLink.href = path;
       cssLink.rel = "stylesheet";
@@ -44,7 +44,7 @@
       if (location.href.includes('/themes/') && !location.href.includes('editor')) {
         getTheme();
         try {
-          let iFrame = document.querySelector(`[title="Online Store"]`)
+          let iFrame = document.querySelector(`main iframe`)
           chrome.storage.sync.get("chosenTheme", function (data) {
             data.chosenTheme.toLowerCase() != "none" &&
               iFrame && iFrame.contentWindow.document.body.querySelector('#app').firstElementChild.setAttribute('p-color-scheme', 'dark')
@@ -52,7 +52,7 @@
         } catch (error) { }
       } else {
         try {
-          let iFrame = document.querySelector(`[title="Online Store"]`)
+          let iFrame = document.querySelector(`main iframe`)
           iFrame && iFrame.contentWindow.document.body.querySelector('#app').firstElementChild.setAttribute('p-color-scheme', 'light')
         } catch (error) { }
       }

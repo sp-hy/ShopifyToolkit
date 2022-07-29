@@ -3,7 +3,7 @@
     // Create setInterval to act as a listener until theme editor elements exist
     let tabIntervalListener = setInterval(() => {
       // Locate iframe and sidebar
-      let hasThemeIframe = document.querySelector(`[title="Online Store"]`)
+      let hasThemeIframe = document.querySelector(`main iframe`)
       if (!hasThemeIframe) return;
 
       let hasThemeContent = hasThemeIframe.contentDocument.querySelector('[data-diffy-attribute="sidebar"]')
@@ -18,7 +18,7 @@
       // If stacked tabs is enabled
       if (theme == 'tabs') {
         let path = chrome.runtime.getURL(`src/themes/${theme}.css`);
-        let iframeTo = document.querySelector(`[title="Online Store"]`);
+        let iframeTo = document.querySelector(`main iframe`);
         var cssLink = document.createElement("link");
         cssLink.href = path;
         cssLink.rel = "stylesheet";
