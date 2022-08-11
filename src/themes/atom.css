@@ -23,7 +23,54 @@
   --tab-border-color: black;
   --tab-text-color: #ccc;
   --text-color: #fff;
+
+  --cm-capture: #c586c0;
+  --cm-liquid-bracket: #ffd700;
+  --cm-meta-bracket: #808080;
+  --cm-equals: #528bff;
+  --cm-liquid-filter: #56b6c2;
+  --cm-number: #b5cea8;
+  --cm-atom-def: #d4d4d4;
 }
+
+/* update */
+.ͼ1g {
+  color: var(--cm-def) !important;
+}
+.ͼ17 {
+  color: var(--cm-comment) !important;
+}
+.ͼ19 {
+  color: var(--cm-capture);
+}
+.ͼ1b {
+  color: var(--cm-atom-def) !important;
+}
+.ͼ1c {
+  color: var(--cm-liquid-bracket) !important;
+}
+.ͼ16 {
+  color: var(--cm-string) !important;
+}
+.ͼ1d {
+  color: var(--cm-meta-bracket) !important;
+}
+.ͼ1e {
+  color: var(--cm-def) !important;
+}
+.ͼ1a {
+  color: var(--cm-equals) !important;
+}
+.ͼ1f {
+  color: var(--cm-liquid-filter) !important;
+}
+.ͼ18 {
+  color: var( --cm-number) !important;
+}
+.ͼ15 {
+  color: var(--cm-number);
+}
+
 
 [p-color-scheme=dark] {
   --p-surface: rgb(33, 37, 43) !important;
@@ -125,10 +172,6 @@ button[name="close"] {
 
 .ͼ1t {
   color: var(--cm-keyword) !important;
-}
-
-.ͼ15 {
-  background-color: #fff;
 }
 
 .ͼ5 {
