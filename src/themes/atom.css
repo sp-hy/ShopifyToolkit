@@ -23,7 +23,54 @@
   --tab-border-color: black;
   --tab-text-color: #ccc;
   --text-color: #fff;
+
+  --cm-capture: #c586c0;
+  --cm-liquid-bracket: #ffd700;
+  --cm-meta-bracket: #808080;
+  --cm-equals: #528bff;
+  --cm-liquid-filter: #56b6c2;
+  --cm-number: #b5cea8;
+  --cm-atom-def: #d4d4d4;
 }
+
+/* update */
+.ͼ1g {
+  color: var(--cm-def) !important;
+}
+.ͼ17 {
+  color: var(--cm-comment) !important;
+}
+.ͼ19 {
+  color: var(--cm-capture) !important;
+}
+.ͼ1b {
+  color: var(--cm-atom-def) !important;
+}
+.ͼ1c {
+  color: var(--cm-liquid-bracket) !important;
+}
+.ͼ16 {
+  color: var(--cm-string) !important;
+}
+.ͼ1d {
+  color: var(--cm-meta-bracket) !important;
+}
+.ͼ1e {
+  color: var(--cm-def) !important;
+}
+.ͼ1a {
+  color: var(--cm-equals) !important;
+}
+.ͼ1f {
+  color: var(--cm-liquid-filter) !important;
+}
+.ͼ18 {
+  color: var( --cm-number) !important;
+}
+.ͼ15 {
+  color: var(--cm-number) !important;
+}
+
 
 [p-color-scheme=dark] {
   --p-surface: rgb(33, 37, 43) !important;
@@ -71,15 +118,15 @@ button[name="close"] {
 
 .ͼ1 .cm-gutters {
   background: var(--background) !important;
-  border-right: none;
+  border-right: none !important;
 }
 
 .ͼ2.cm-focused .cm-selectionBackground, .ͼ2 .cm-selectionBackground {
-  background: var(--selected);
+  background: var(--selected) !important;
 }
 
 .ͼ1i {
-  color: var(--cm-keyword);
+  color: var(--cm-keyword) !important;
 }
 
 .ͼ1j {
@@ -127,62 +174,58 @@ button[name="close"] {
   color: var(--cm-keyword) !important;
 }
 
-.ͼ15 {
-  background-color: #fff;
-}
-
 .ͼ5 {
-  color: var(--cm-property);
+  color: var(--cm-property) !important;
 }
 
 .ͼb {
-  color: var(--cm-def);
+  color: var(--cm-def) !important;
 }
 
 .ͼc {
-  color: var(--cm-def);
+  color: var(--cm-def) !important;
 }
 
 .ͼd {
-  color: var(--cm-liquid-atom);
+  color: var(--cm-liquid-atom) !important;
 }
 
 .ͼe {
-  color: var(--cm-string);
+  color: var(--cm-string) !important;
 }
 
 .ͼf {
-  color: var(--cm-string);
+  color: var(--cm-string) !important;
 }
 
 .ͼg {
-  color: var(--cm-builtin);
+  color: var(--cm-builtin) !important;
 }
 
 .ͼh {
-  color: #30a;
+  color: #30a !important;
 }
 
 .ͼi {
-  color: var(--cm-keyword);
+  color: var(--cm-keyword) !important;
 }
 
 .ͼj {
-  color: var(--cm-qualifier);
+  color: var(--cm-qualifier) !important;
 }
 
 .ͼk {
-  color: var(--cm-property);
+  color: var(--cm-property) !important;
 }
 
 .ͼl {
-  color: var(--cm-property);
+  color: var(--cm-property) !important;
 }
 
 .ͼm {
-  color: var(--cm-comment);
+  color: var(--cm-comment) !important;
 }
 
 .ͼn {
-  color: #f00;
+  color: #f00 !important;
 }
