@@ -1,6 +1,6 @@
 {
   "name": "Liquify - Shopify Enhanced Code Search/Editor",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "manifest_version": 3,
   "description": "Code Search / Themes / Editor Enhancements",
   "homepage_url": "https://github.com/lukechadwick/Liquify",
@@ -41,7 +41,8 @@
         "src/themes/atom.css",
         "src/themes/icons.css",
         "src/themes/common.css",
-        "src/themes/tabs.css"
+        "src/themes/tabs.css",
+        "src/themes/original.css"
       ],
       "matches": ["<all_urls>"]
     }

@@ -23,6 +23,7 @@
 
       if (theme != 'common')
         iframeTo.contentWindow.document.body.querySelector('#app').firstElementChild.setAttribute('p-color-scheme', 'dark');
+        iframeTo.contentWindow.document.body.classList.add('dark')
     }, 500);
   }
 
@@ -48,12 +49,14 @@
           chrome.storage.sync.get("chosenTheme", function (data) {
             data.chosenTheme.toLowerCase() != "none" &&
               iFrame && iFrame.contentWindow.document.body.querySelector('#app').firstElementChild.setAttribute('p-color-scheme', 'dark')
+              iFrame && iFrame.contentWindow.document.body.classList.add('dark')
           });
         } catch (error) { }
       } else {
         try {
           let iFrame = document.querySelector(`main iframe`)
           iFrame && iFrame.contentWindow.document.body.querySelector('#app').firstElementChild.setAttribute('p-color-scheme', 'light')
+          iFrame && iFrame.contentWindow.document.body.classList.remove('dark')
         } catch (error) { }
       }
     }
