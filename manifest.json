@@ -41,8 +41,7 @@
         "src/themes/atom.css",
         "src/themes/icons.css",
         "src/themes/common.css",
-        "src/themes/tabs.css",
-        "src/themes/original.css"
+        "src/themes/tabs.css"
       ],
       "matches": ["<all_urls>"]
     }
