@@ -65,5 +65,5 @@
 
 [data-diffy-attribute="tablist"] [data-diffy-attribute] {
   display: flex;
-  padding: 0.35rem 1.25rem .35rem 1rem !important;
+  padding: 0.35rem 1.5rem .35rem 1rem !important;
 }
