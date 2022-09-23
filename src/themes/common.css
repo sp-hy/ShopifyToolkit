@@ -76,18 +76,12 @@
   margin-top: 1px !important;
 }
 
-
-
 [data-diffy-attribute] [class*="PrimaryAction"] [class*="Prefix"] {
   height: 16px;
 }
 
 [data-diffy-attribute] [class*="TrailingContent"] {
   height: 12px;
-}
-
-.cm-scroller {
-  order: 10 !important;
 }
 
 .cm-editor .cm-panels.cm-panels-bottom {

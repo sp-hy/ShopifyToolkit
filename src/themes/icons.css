@@ -14,18 +14,21 @@
   content: var(--is-css-file);
   position: inherit;
   top: 3px;
+  background: none;
 }
 
 [data-diffy-attribute="sidebar"] [data-diffy-attribute] .is-js::before {
   content: var(--is-js-file);
   position: inherit;
   top: 3px;
+  background: none;
 }
 
 [data-diffy-attribute="sidebar"] [data-diffy-attribute] .is-scss::before {
   content: var(--is-scss-file);
   position: inherit;
   top: 3px;
+  background: none;
 }
 
 [data-diffy-attribute="tablist"] [data-diffy-attribute].is-css::before {
