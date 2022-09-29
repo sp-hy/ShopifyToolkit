@@ -30,7 +30,7 @@
   getTheme = () => {
     chrome.storage.sync.get("chosenTheme", function (data) {
       // Fallback to vscode if no default theme has been chosen
-      let chosenTheme = data.chosenTheme.toLowerCase() || "vscode";
+      let chosenTheme = data.chosenTheme && data.chosenTheme.toLowerCase() || "vscode";
       chosenTheme != "none" &&
         setTheme(chosenTheme);
       setTheme('common');
@@ -47,7 +47,7 @@
         try {
           let iFrame = document.querySelector(`main iframe`)
           chrome.storage.sync.get("chosenTheme", function (data) {
-            data.chosenTheme.toLowerCase() != "none" &&
+            typeof data.chosenTheme == 'undefined' || data.chosenTheme.toLowerCase() != "none" &&
               iFrame && iFrame.contentWindow.document.body.querySelector('#app').firstElementChild.setAttribute('p-color-scheme', 'dark')
               iFrame && iFrame.contentWindow.document.body.classList.add('dark')
           });

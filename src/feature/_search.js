@@ -40,15 +40,19 @@
         // Batch request all valid asset files asynchronously, then add them to the results array 
         const datas = 
           filteredResponse.map(asset => {
-            return fetch(
-                window.location.href.split("?")[0] +
-                "/assets.json?asset[key]=" +
-                asset.key
-            )
-            .then((response) => response.json())
-            .then(item => {
-              result.push(item)
-            })
+            try {
+              return fetch(
+                  window.location.href.split("?")[0] +
+                  "/assets.json?asset[key]=" +
+                  asset.key
+              )
+              .then((response) => response.json())
+              .then(item => {
+                result.push(item)
+              })
+            } catch (error) {
+              console.log('asset fetch fail: ', asset, error);
+            }
           })
         return Promise.all(datas).then(() => result)
       }
