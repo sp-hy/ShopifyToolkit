@@ -30,7 +30,6 @@
   display: block;
   padding: 0 2px 0 4px;
   font-family: Menlo, Monaco, "Courier New", monospace !important;
-  font-size: 12px !important;
   line-height: 18px !important;
 }
 
@@ -55,10 +54,6 @@
 
 [data-diffy-attribute="search"] svg {
   fill: #2688ff;
-}
-
-[data-diffy-attribute] span {
-  font-size: 12px !important;
 }
 
 [data-diffy-attribute] [class*="Interior"], [data-diffy-attribute] [class*="PrimaryAction"], [data-diffy-attribute] [class*="_Action_"] {

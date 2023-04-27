@@ -42,6 +42,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
   });
 
+  var fontSize = document.querySelector("#font-size");
+
+  fontSize.addEventListener("change", (e) => {
+    chrome.storage.sync.set({ fontSizeSetting: e.target.value });
+  });
+
+
   // Load previous value
   chrome.storage.sync.get("wrapChecked", function (data) {
     if (data.wrapChecked) checkboxWrap.setAttribute("checked", "true");
@@ -49,6 +56,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   chrome.storage.sync.get("wideAdmin", function (data) {
     if (data.wideAdmin) checkboxWide.setAttribute("checked", "true");
+  });
+
+  chrome.storage.sync.get("fontSizeSetting", function (data) {
+    console.log('data', data);
+    console.log(fontSize);
+    if (data.fontSizeSetting) fontSize.setAttribute('value', data.fontSizeSetting)
   });
 
   let openResourceButton = document.querySelector(".button-resource");
