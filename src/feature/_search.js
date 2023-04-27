@@ -26,9 +26,11 @@
       clearInterval(searchIntervalListener);
 
       chrome.runtime.onMessage.addListener(function (request, sender) {
-        let parsed = JSON.parse(request.data);
-        // Get asset list
-        if (request.data) getAssets(frameContent, parsed);
+        if (request.data) {
+          let parsed = JSON.parse(request.data);
+          // Get asset list
+          getAssets(frameContent, parsed);
+        }
       });
 
       // Set loading message

@@ -38,6 +38,12 @@
       <input type="checkbox" name="wide-admin" id="wide-admin" />
     </div>
 
+    <div class="setting-container">
+      <p>Font-size:</p>
+      <input type="number" name="font-size" id="font-size" min="10" max="20" step="1" style="color:black" />
+      <p style="margin-left: 2px;">px</p>
+    </div>
+
     <hr />
     <p>Features:</p>
     <ul>
@@ -45,8 +51,6 @@
       <li>File type icons</li>
       <li>Themes</li>
       <li>Drag/Drop tabs</li>
-      <li>Layout enhancements</li>
-      <!-- <li title="Currently broken/disabled" style="text-decoration: line-through;">Autocomplete</li> -->
     </ul>
     <hr />
     <p>Storefront Shortcuts  (hover for info):</p>
@@ -62,6 +66,10 @@
     width: 250px;
     background: #2d2d2d;
     font-family: Helvetica, Ubuntu, Arial, sans-serif;
+  }
+
+  input[type=number]::-webkit-inner-spin-button {
+    opacity: 1
   }
 
   .setting-select {
