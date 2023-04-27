@@ -33,16 +33,16 @@
 
 [p-color-scheme="dark"], body.dark {
   color-scheme: dark !important;
-  --p-background: #202123 !important;
-  --p-surface: rgb(37, 37, 38) !important;
+  --p-color-bg: #202123 !important;
+  --p-color-bg-app: rgb(37, 37, 38) !important;
   --p-surface-neutral-subdued: #44474a !important;
   --p-surface-hovered: #2f3133 !important;
   --p-surface-pressed: #3e4043 !important;
   --p-surface-search-field: #2f3133 !important;
-  --p-border: #505356 !important;
+  --p-color-border-subdued: #505356 !important;
   --p-divider: #454749 !important;
   --p-icon: #a6acb2 !important;
-  --p-text: #e3e5e7 !important;
+  --p-color-text: #e3e5e7 !important;
   --p-text-subdued: #999fa4 !important;
   --p-interactive: #36a3ff !important;
   --p-interactive-pressed: #88bcff !important;
@@ -55,6 +55,10 @@
 
 [data-diffy-attribute="tablist"] [data-diffy-attribute][aria-selected="true"] {
   background: var(--p-surface-pressed);
+}
+
+[data-diffy-attribute] [class*="selected"] button, [data-diffy-attribute] [aria-labelledby]:hover {
+  background-color: #363636 !important;
 }
 
 /* update */
