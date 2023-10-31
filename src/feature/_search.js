@@ -17,9 +17,9 @@
         (hasThemeIframe &&
           hasThemeIframe.contentDocument &&
           hasThemeIframe.contentDocument.querySelector(
-            '[placeholder="Search files..."]'
+            '[type="search"]'
           )) ||
-        document.querySelector('[placeholder="Search files..."]');
+        document.querySelector('[type="search"]');
       if (!frameContent) return;
 
       // Element found, clear interval
@@ -58,7 +58,7 @@
         let searchParent = searchElement.parentNode;
         const newItem = document.createElement("div");
         newItem.innerHTML =
-          '<input id="liquify-search" placeholder="Enhanced search loading..." autocomplete="off" class="Polaris-TextField__Input_30ock Polaris-TextField__Input--hasClearButton_15k6h search-loading" type="search" aria-labelledby="PolarisTextField2Label PolarisTextField2-Prefix" aria-invalid="false" value="">';
+          '<input id="liquify-search" placeholder="Enhanced search loading..." autocomplete="off" class="Polaris-TextField__Input_30ock Polaris-TextField__Input--hasClearButton_15k6h" type="search" aria-labelledby=":r1:Label :r1:-Prefix" aria-invalid="false" value>';
         searchElement.parentNode.replaceChild(
           newItem.firstElementChild,
           searchElement
