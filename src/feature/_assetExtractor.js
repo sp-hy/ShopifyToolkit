@@ -22,6 +22,11 @@
             let filteredResponse = data.assets.filter((word) =>
               allowedExtensions.some((v) => word.key.includes(v))
             );
+
+            filteredResponse = data.assets.filter((word) =>
+              allowedExtensions.some((v) => (word.key.includes(v) && !word.key.includes('.map')))
+            );
+            
             getAssetsContent(filteredResponse).then((data) => {
               let assetJSON = JSON.stringify(data);
 
