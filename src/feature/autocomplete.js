@@ -19,8 +19,6 @@
       let frameContent = hasThemeIframe.contentDocument.querySelector('.cm-editor')
       if (!frameContent) return;
 
-      console.log('tet');
-
       editor = frameContent
 
 
@@ -211,8 +209,6 @@
         "</span></li>";
 
       $("#autocomplete").append($wordElement);
-
-      console.log($("#autocomplete"));
     });
     mouseHandler();
   };

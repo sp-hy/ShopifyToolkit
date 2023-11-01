@@ -34,6 +34,7 @@
 [p-color-scheme="dark"], body.dark {
   color-scheme: dark !important;
   --p-color-bg: #202123 !important;
+  --p-color-bg-input: #2f3133 !important;
   --p-color-bg-app: rgb(37, 37, 38) !important;
   --p-surface-neutral-subdued: #44474a !important;
   --p-surface-hovered: #2f3133 !important;
@@ -51,6 +52,15 @@
   --p-border: var(--p-border-width-1) solid var(--p-border) !important;
   --p-border-divider: var(--p-border-width-1) solid var(--p-divider) !important;
   --p-surface-selected: #54575b !important;
+  --osui_color-frame-surface-bg: rgb(37, 37, 38) !important;
+}
+
+[role="list"] {
+  background: rgb(37, 37, 38) !important;
+} 
+
+[placeholder="Enhanced search loading..."] + div::after {
+  background: rgb(37, 37, 38) !important;
 }
 
 [data-diffy-attribute="tablist"] [data-diffy-attribute][aria-selected="true"] {
@@ -61,12 +71,24 @@
   background-color: #363636 !important;
 }
 
+#liquify-search + div {
+  background: var(--p-color-bg-app) !important;
+}
+
+#liquify-search {
+  padding-left: 0.5rem;
+}
+
+[p-color-scheme="dark"] [class^="Polaris-Button"] {
+  background: rgb(37, 37, 38) !important;
+}
+
 /* update */
 .ͼ1g {
   color: var(--cm-def) !important;
 }
 .ͼ17 {
-  color: var(--cm-comment) !important;
+  color: var(--cm-string) !important;
 }
 .ͼ19 {
   color: var(--cm-capture) !important;
@@ -75,30 +97,32 @@
   color: var(--cm-def) !important;
 }
 .ͼ1c {
-  color: var(--cm-liquid-bracket) !important;
+  color: var(--cm-builtin) !important;
 }
 .ͼ16 {
   color: var(--cm-string) !important;
 }
 .ͼ1d {
-  color: var(--cm-meta-bracket) !important;
+  color: var(--cm-liquid-bracket) !important;
 }
 .ͼ1e {
-  color: var(--cm-def) !important;
+  color: var(--cm-bracket) !important;
 }
 .ͼ1a {
-  color: var(--cm-equals) !important;
+  color: var(--cm-capture) !important;
 }
 .ͼ1f {
-  color: var(--cm-liquid-filter) !important;
+  color: var(--cm-def) !important;
 }
 .ͼ18 {
-  color: var( --cm-number) !important;
+  color: var(--cm-comment) !important;
 }
 .ͼ15 {
   color: var(--cm-number) !important;
 }
-
+.ͼ1h {
+  color: var(--cm-line) !important;
+}
 
 /* Overrides */
 .cm-editor {
@@ -141,7 +165,7 @@ button[name="close"] {
 }
 
 .ͼ2.cm-focused .cm-selectionBackground, .ͼ2 .cm-selectionBackground {
-  background: var(--selected);
+  background: var(--selected) !important;
 }
 
 .ͼ1i {
