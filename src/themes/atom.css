@@ -57,7 +57,11 @@
   --osui_color-frame-surface-bg: rgb(37, 37, 38) !important;
 }
 
-[class^="Polaris-Button"] {
+[p-color-scheme="dark"] [class^="Polaris-Button"] {
+  background: rgb(37, 37, 38) !important;
+}
+
+[placeholder="Enhanced search loading..."] + div::after {
   background: rgb(37, 37, 38) !important;
 }
 

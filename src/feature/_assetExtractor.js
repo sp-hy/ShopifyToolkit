@@ -9,10 +9,12 @@
     }
 
     chrome.runtime.onMessage.addListener(function (request, sender) {
-      if (request.searchReady) getAssetList();
+      chrome.storage.sync.get("throttleBehaviour", function (data) {
+        if (request.searchReady) getAssetList(data.throttleBehaviour);
+      });
     });
 
-    getAssetList = () => {
+    getAssetList = (throttle) => {
       fetch(window.location.href.split("?")[0] + "/assets.json")
         .then((response) => response.json())
         .then(function (data) {
@@ -27,7 +29,7 @@
               allowedExtensions.some((v) => (word.key.includes(v) && !word.key.includes('.map')))
             );
             
-            getAssetsContent(filteredResponse).then((data) => {
+            getAssetsContent(filteredResponse, throttle).then((data) => {
               let assetJSON = JSON.stringify(data);
 
               chrome.runtime.sendMessage({ data: assetJSON });
@@ -36,29 +38,45 @@
         });
     };
 
-    getAssetsContent = async (filteredResponse) => {
+    getAssetsContent = async (filteredResponse, throttle) => {
       const result = [];
-      // Batch request all valid asset files asynchronously, then add them to the results array
-      const datas = filteredResponse.map((asset) => {
+      const requestLimit = throttle || 50; // Maximum requests per second
+      const requestQueue = [];
+      const requestInterval = 1000 / requestLimit; // Calculate the interval between requests
+    
+      const fetchDataWithRateLimit = async (asset) => {
         try {
-          return fetch(
-            window.location.href.split("?")[0] +
-              "/assets.json?asset[key]=" +
-              asset.key
-          )
-            .then((response) => response.json())
-            .then((item) => {
-              result.push(item);
-            })
-            .catch((err) => {
-              return null;
-            });
-        } catch (error) {
+          const response = await fetch(
+            window.location.href.split("?")[0] + "/assets.json?asset[key]=" + asset.key
+          );
+    
+          if (response.ok) {
+            const item = await response.json();
+            result.push(item);
+          }
+        } catch (err) {
           // Handle failed/blocked requests
-          return null;
         }
-      });
-      return Promise.all(datas).then(() => result);
+      };
+    
+      for (const asset of filteredResponse) {
+        const promise = fetchDataWithRateLimit(asset);
+        requestQueue.push(promise);
+    
+        if (requestQueue.length >= requestLimit) {
+          // Wait for the current batch of requests to complete
+          await Promise.all(requestQueue);
+          requestQueue.length = 0;
+    
+          // Introduce a delay before starting the next batch
+          await new Promise((resolve) => setTimeout(resolve, requestInterval));
+        }
+      }
+    
+      // Wait for any remaining requests to complete
+      await Promise.all(requestQueue);
+    
+      return result;
     };
   };
 

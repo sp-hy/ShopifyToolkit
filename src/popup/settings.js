@@ -22,6 +22,17 @@ document.addEventListener("DOMContentLoaded", function (event) {
     chrome.storage.sync.set({ tabBehaviour: tabBehaviour });
   });
 
+  let throttleSetting = document.querySelector(".setting-throttle");
+  // Load previous value
+  chrome.storage.sync.get("throttleBehaviour", function (data) {
+    throttleSetting.value = data.throttleBehaviour;
+  });
+  // Set new value on change
+  throttleSetting.addEventListener("change", (e) => {
+    let throttleBehaviour = e.target.value;
+    chrome.storage.sync.set({ throttleBehaviour: throttleBehaviour });
+  });
+
   var checkboxWrap = document.querySelector("#word-wrap");
 
   checkboxWrap.addEventListener("change", (e) => {
@@ -59,8 +70,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
   });
 
   chrome.storage.sync.get("fontSizeSetting", function (data) {
-    console.log('data', data);
-    console.log(fontSize);
     if (data.fontSizeSetting) fontSize.setAttribute('value', data.fontSizeSetting)
   });
 

@@ -59,6 +59,10 @@
   background: rgb(37, 37, 38) !important;
 } 
 
+[placeholder="Enhanced search loading..."] + div::after {
+  background: rgb(37, 37, 38) !important;
+}
+
 [data-diffy-attribute="tablist"] [data-diffy-attribute][aria-selected="true"] {
   background: var(--p-surface-pressed);
 }
@@ -75,7 +79,7 @@
   padding-left: 0.5rem;
 }
 
-[class^="Polaris-Button"] {
+[p-color-scheme="dark"] [class^="Polaris-Button"] {
   background: rgb(37, 37, 38) !important;
 }
 
