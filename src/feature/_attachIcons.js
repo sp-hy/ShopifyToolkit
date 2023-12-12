@@ -1,4 +1,6 @@
 (() => {
+  window.iconsLoaded = false;
+
   attachIcons = () => {
     // Create setInterval to act as a listener until theme editor elements exist
     let iconIntervalListener = setInterval(() => {
@@ -19,6 +21,8 @@
 
       // Element found, clear interval
       clearInterval(iconIntervalListener);
+
+      window.iconsLoaded = true;
 
       // Inject icon CSS stylesheet into iframe
       let path = chrome.runtime.getURL("src/themes/icons.css");
@@ -108,7 +112,8 @@
       previousUrl = location.href;
       if (
         location.href.includes("/themes/") &&
-        !location.href.includes("editor")
+        !location.href.includes("editor") &&
+        !window.iconsLoaded
       )
         attachIcons();
     }

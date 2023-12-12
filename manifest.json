@@ -23,15 +23,21 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://*.myshopify.com/admin/*", "https://admin.shopify.com/store/*", "https://online-store-web.shopifyapps.com/*"],
+      "matches": ["https://online-store-web.shopifyapps.com/*"],
       "js": [
-        "src/feature/_assetExtractor.js",
         "src/feature/_fontSize.js",
         "src/feature/_search.js",
         "src/feature/_theme.js",
         "src/feature/_attachIcons.js",
         "src/feature/_tabBehaviour.js",
         "src/feature/wideAdmin.js"
+      ],
+      "all_frames": true
+    },
+    {
+      "matches": ["https://*.myshopify.com/admin/*", "https://admin.shopify.com/store/*"],
+      "js": [
+        "src/feature/_assetExtractor.js"
       ],
       "all_frames": true
     }

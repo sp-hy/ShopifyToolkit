@@ -1,4 +1,6 @@
 (() => {
+  window.themeLoaded = false;
+
   setTheme = (theme) => {
     // Create setInterval to act as a listener until theme editor elements exist
     let searchIntervalNew = setInterval(() => {
@@ -19,6 +21,8 @@
 
       // Element found, clear interval
       clearInterval(searchIntervalNew);
+
+      window.themeLoaded = true;
 
       // Inject theme CSS stylesheet into iframe
       let path = chrome.runtime.getURL(`src/themes/${theme}.css`);
