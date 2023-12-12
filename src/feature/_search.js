@@ -1,4 +1,6 @@
 (() => {
+  window.searchLoaded = false;
+
   startSearch = () => {
     if (!window.SEARCH_INJECTED_FLAG) {
       window.SEARCH_INJECTED_FLAG = true;
@@ -24,6 +26,8 @@
 
       // Element found, clear interval
       clearInterval(searchIntervalListener);
+
+      window.searchLoaded = true;
 
       chrome.runtime.onMessage.addListener(function (request, sender) {
         if (request.data) {
@@ -144,9 +148,14 @@
   const assetObserver = new MutationObserver(() => {
     if (location.href !== previousUrl) {
       previousUrl = location.href;
+
+      if (location.href == "https://online-store-web.shopifyapps.com/admin/online-store/themes")
+        window.searchLoaded = false;
+
       if (
         location.href.includes("/themes/") &&
-        !location.href.includes("editor")
+        !location.href.includes("editor") &&
+        !window.searchLoaded
       )
         startSearch();
     }
