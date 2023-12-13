@@ -1,5 +1,6 @@
 chrome.storage.sync.get("fontSizeSetting", function (data) {
-  let fontSize = 12
+  let fontSize = 12;
+  window.fontloaded = false;
 
   if (data.fontSizeSetting)
     fontSize = data.fontSizeSetting;
@@ -26,6 +27,8 @@ chrome.storage.sync.get("fontSizeSetting", function (data) {
         // Element found, clear interval
         clearInterval(iconIntervalListener);
 
+        window.fontloaded = true;
+
         // Inject CSS stylesheet into iframe
         let css = document.createElement('style');
         css.type = 'text/css';
@@ -44,7 +47,8 @@ chrome.storage.sync.get("fontSizeSetting", function (data) {
         previousUrl = location.href;
         if (
           location.href.includes("/themes/") &&
-          !location.href.includes("editor")
+          !location.href.includes("editor") &&
+          !window.fontLoaded
         )
           injectFont();
       }
