@@ -54,6 +54,7 @@
   --p-surface-selected: #54575b !important;
   --osui_color-frame-surface-bg: rgb(37, 37, 38) !important;
   --p-color-bg-surface: rgb(37, 37, 38) !important;
+  --p-color-border-secondary: dimgrey !important;
 }
 
 [role="list"] {
@@ -70,6 +71,10 @@
 
 [data-diffy-attribute] [class*="selected"] button, [data-diffy-attribute] [aria-labelledby]:hover {
   background-color: #363636 !important;
+}
+
+.cm-search.cm-panel input {
+  filter: invert(1);
 }
 
 #liquify-search + div {
