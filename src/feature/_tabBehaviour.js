@@ -1,4 +1,6 @@
 (() => {
+  window.tabsLoaded = false;
+
   setTabs = (theme) => {
     // Create setInterval to act as a listener until theme editor elements exist
     let tabIntervalListener = setInterval(() => {
@@ -19,6 +21,8 @@
 
       // Element found, clear interval
       clearInterval(tabIntervalListener);
+
+      window.tabsLoaded = true;
 
       // Drag and drop tabs
       dragDropTabs(frameDocument);
@@ -105,8 +109,10 @@
       previousUrl = location.href;
       if (
         location.href.includes("/themes/") &&
-        !location.href.includes("editor")
+        !location.href.includes("editor") && 
+        !window.tabsLoaded
       ) {
+        console.log('tabs', window.searchLoaded);
         getTabs();
       }
     }
