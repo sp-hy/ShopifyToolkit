@@ -15,11 +15,13 @@ Once installed you'll see the Liquify extension on the toolbar:
 ## Features
 
 - Themes/Icons -- Currently a VSCode/Atom theme, tabs/files/autocomplete suggestions will also show an icon for the type of file/suggestion.
-- Enhanced search -- This will search both file names and file contents for matches
-- Enhanced tabs -- Rearrange editor tabs, allow tab stacking instad of scroll
-- Layout changes -- Changes to layout/sizes
+- Enhanced search -- This will search both file names and file contents for matches.
+- Enhanced tabs -- Rearrange editor tabs, allow tab stacking instead of scroll.
+- Layout changes -- Changes to layout/sizes.
 - Autocomplete -- Code autocomplete suggestions as you type. Press the ` key to cycle through suggestions, and the 1 key to select, or click with the mouse.
-
+- Asset Caching -- Cache assets to improve performance and reduce load times.
+- Code Edit Detection -- Detect changes in code edits and update the cache accordingly.
+- Rate Limiting -- Set rate limits for asset fetching to manage performance and avoid server overload.
 
 ## Contributing
 

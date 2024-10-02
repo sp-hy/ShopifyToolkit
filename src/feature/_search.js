@@ -30,16 +30,21 @@
       window.searchLoaded = true;
 
       chrome.runtime.onMessage.addListener(function (request, sender) {
-        if (request.data) {
+        if (request.action === "updateLoadingUI") {
+          searchInput.setAttribute("placeholder", request.message);
+        } else if (request.action === "resetSearchInput") {
+          searchInput.setAttribute("placeholder", "Search filename / contents...");
+          searchInput.disabled = false;
+        } else if (request.data) {
           let parsed = JSON.parse(request.data);
           // Get asset list
           getAssets(frameContent, parsed);
         }
       });
 
-      // Set loading message
+      // Set initial loading message
       let searchInput = frameContent;
-      searchInput.setAttribute("placeholder", "Enhanced search loading...");
+      searchInput.setAttribute("placeholder", "Loading Assets...");
       searchInput
         .closest('[data-diffy-attribute="search"]')
         .classList.add("search-loading");
@@ -62,7 +67,7 @@
         let searchParent = searchElement.parentNode;
         const newItem = document.createElement("div");
         newItem.innerHTML =
-          '<input id="liquify-search" placeholder="Enhanced search loading..." autocomplete="off" class="Polaris-TextField__Input_30ock Polaris-TextField__Input--hasClearButton_15k6h" type="search" aria-labelledby=":r1:Label :r1:-Prefix" aria-invalid="false" value>';
+          '<input id="liquify-search" placeholder="Loading Assets..." autocomplete="off" class="Polaris-TextField__Input Polaris-TextField__Input--hasClearButton" type="search" aria-labelledby=":r1:Label :r1:-Prefix" aria-invalid="false"  style="color: black; z-index: 999; width: 100%; border-top-right-radius: 8px; border-bottom-right-radius: 8px; border-color: #8a8a8a;" value>';
         searchElement.parentNode.replaceChild(
           newItem.firstElementChild,
           searchElement
@@ -75,6 +80,7 @@
           "Search filename / contents..."
         );
         searchInput.classList.remove("search-loading");
+        searchInput.disabled = false;
 
         // On type event listener
         searchInput.addEventListener("input", (e) => {

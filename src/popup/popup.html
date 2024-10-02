@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-
+<html>
 <head>
   <script src="settings.js"></script>
 </head>
-
+<body>
 <div id="mainPopup">
   <div class="title-bar">Liquify</div>
 
@@ -69,12 +69,31 @@
     <button class="button-resource" title="Open admin page for the current Page/Collection/Blog/Product">Open Page in Admin</button>
     <button class="button-theme-editor" title="Open theme editor for the current theme">Open Theme Editor</button>
     <button class="button-code-editor" title="Open code editor for the current theme">Open Code Editor</button>
+
+    <div class="setting-container">
+      <button id="clear-current-store">Clear Current Store Storage</button>
+    </div>
+
+    <div class="setting-container">
+      <button id="clear-all-storage">Clear All Storage</button>
+    </div>
+
+    <div class="setting-container">
+      <button id="view-storage">View Storage</button>
+    </div>
+
+    <div id="storage-view" style="display: none;">
+      <h3>Storage Contents:</h3>
+      <pre id="storage-content" style="max-height: 300px; overflow-y: auto; background-color: #1e1e1e; padding: 10px;"></pre>
+    </div>
   </div>
 </div>
 
 <style type="text/css">
   #mainPopup {
-    width: 250px;
+    width: 300px; /* Increased width */
+    max-height: 600px; /* Added max-height */
+    overflow-y: auto; /* Added scroll for vertical overflow */
     background: #2d2d2d;
     font-family: Helvetica, Ubuntu, Arial, sans-serif;
   }
@@ -129,4 +148,11 @@
     border: none;
     margin-bottom: 5px;
   }
+
+  #storage-content {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
 </style>
+</body>
+</html>
