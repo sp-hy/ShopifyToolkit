@@ -59,13 +59,8 @@
   --p-color-border-secondary: dimgrey !important;
 }
 
-[p-color-scheme="dark"] [class^="Polaris-Button_"] {
+[p-color-scheme="dark"] [class^="Polaris-Button"] {
   background: rgb(37, 37, 38) !important;
-}
-
-.cm-tooltip {
-  filter: invert(1);
-  overflow: auto;
 }
 
 [placeholder="Enhanced search loading..."] + div::after {

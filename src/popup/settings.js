@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   let throttleSetting = document.querySelector(".setting-throttle");
   // Load previous value
   chrome.storage.sync.get("throttleBehaviour", function (data) {
-    throttleSetting.value = data.throttleBehaviour;
+    throttleSetting.value = data.throttleBehaviour || "15";
   });
   // Set new value on change
   throttleSetting.addEventListener("change", (e) => {
@@ -112,4 +112,103 @@ document.addEventListener("DOMContentLoaded", function (event) {
       });
     })
   });
+
+  // Add event listeners for the new clear storage buttons
+  let clearCurrentStoreButton = document.querySelector("#clear-current-store");
+  clearCurrentStoreButton.addEventListener("click", () => {
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+      let currentTab = tabs[0];
+      let url = new URL(currentTab.url);
+      let pathParts = url.pathname.split('/');
+      let storeIndex = pathParts.indexOf('store');
+      let themeIndex = pathParts.indexOf('themes');
+      
+      if (storeIndex !== -1 && themeIndex !== -1) {
+        let storeName = pathParts[storeIndex + 1];
+        let themeId = pathParts[themeIndex + 1];
+        let key = `${storeName}_${themeId}`;
+        
+        chrome.runtime.sendMessage({action: "clearCurrentStore", key: key}, function(response) {
+          if (response.success) {
+            alert('Storage cleared for current store');
+          } else {
+            alert('Error clearing storage: ' + response.error);
+          }
+        });
+      } else {
+        alert('Could not determine current store. Please make sure you are on a Shopify admin page.');
+      }
+    });
+  });
+
+  let clearAllStorageButton = document.querySelector("#clear-all-storage");
+  clearAllStorageButton.addEventListener("click", () => {
+    chrome.runtime.sendMessage({action: "clearAllStorage"}, function(response) {
+      if (response.success) {
+        alert('All storage cleared');
+      } else {
+        alert('Error clearing storage: ' + response.error);
+      }
+    });
+  });
+
+  let viewStorageButton = document.querySelector("#view-storage");
+  viewStorageButton.addEventListener("click", viewStorage);
+
+  // Function to clear storage for the current store
+  function clearCurrentStoreStorage() {
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+      let currentTab = tabs[0];
+      let url = new URL(currentTab.url);
+      let pathParts = url.pathname.split('/');
+      let storeIndex = pathParts.indexOf('store');
+      let themeIndex = pathParts.indexOf('themes');
+      
+      if (storeIndex !== -1 && themeIndex !== -1) {
+        let storeName = pathParts[storeIndex + 1];
+        let themeId = pathParts[themeIndex + 1];
+        let key = `${storeName}_${themeId}`;
+        
+        chrome.runtime.sendMessage({action: "clearCurrentStore", key: key}, function(response) {
+          if (response.success) {
+            alert('Storage cleared for current store');
+          } else {
+            alert('Error clearing storage: ' + response.error);
+          }
+        });
+      } else {
+        alert('Could not determine current store. Please make sure you are on a Shopify admin page.');
+      }
+    });
+  }
+
+  // Function to clear all storage for the extension
+  function clearAllStorage() {
+    chrome.runtime.sendMessage({action: "clearAllStorage"}, function(response) {
+      if (response.success) {
+        alert('All storage cleared');
+      } else {
+        alert('Error clearing storage: ' + response.error);
+      }
+    });
+  }
+
+  function viewStorage() {
+    chrome.runtime.sendMessage({action: "viewStorage"}, function(response) {
+      let storageContent = document.getElementById('storage-content');
+      let storageView = document.getElementById('storage-view');
+      
+      if (response.success) {
+        if (response.data.length === 0) {
+          storageContent.textContent = "Storage is empty.";
+        } else {
+          storageContent.textContent = JSON.stringify(response.data, null, 2);
+        }
+        storageView.style.display = 'block';
+      } else {
+        storageContent.textContent = "Error fetching storage: " + response.error;
+        storageView.style.display = 'block';
+      }
+    });
+  }
 });
