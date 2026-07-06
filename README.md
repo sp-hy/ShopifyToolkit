@@ -17,6 +17,12 @@ To install from source:
 
 Click the ShopifyToolkit icon in the toolbar while on a Shopify storefront or admin page. The popup shows the detected store and theme, then offers shortcuts to common admin destinations.
 
+<img width="318" height="308" alt="image" src="https://github.com/user-attachments/assets/029f9f07-78de-4a11-bf2e-a1a1619be28f" />
+<img width="313" height="283" alt="image" src="https://github.com/user-attachments/assets/87804ab7-c274-4903-8194-80fa7b9e8a55" />
+
+
+
+
 ## Features
 
 - **Store & theme info** — Displays the current store name and theme name when available
