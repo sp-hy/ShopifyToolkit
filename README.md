@@ -1,23 +1,31 @@
 # ShopifyToolkit
 
-ShopifyToolkit is a Chrome browser extension with quick shortcuts from Shopify storefront pages to admin.
+ShopifyToolkit is a Chrome browser extension with quick shortcuts from Shopify storefront and admin pages to other areas of the Shopify admin.
 
 ## Installation
 
-Get the extension from the [Chrome Store here](https://chrome.google.com/webstore/detail/....).
+Get the extension from the [Chrome Web Store](https://chrome.google.com/webstore/detail/....).
+
+To install from source:
+
+1. Clone this repository.
+2. Open `chrome://extensions` in Chrome.
+3. Enable **Developer mode**.
+4. Click **Load unpacked** and select the repository folder.
 
 ## Usage
 
-Once installed you'll see the ShopifyToolkit extension on the toolbar:
-
-![](https://i.imgur.com/Qgv7YsQ.png)
+Click the ShopifyToolkit icon in the toolbar while on a Shopify storefront or admin page. The popup shows the detected store and theme, then offers shortcuts to common admin destinations.
 
 ## Features
 
-- **Open Admin Home** — Jump to the store's `/admin` page from any storefront page
-- **Open Page in Admin** — Open the admin page for the current product, collection, page, or blog article
-- **Open Theme Editor** — Open the theme editor for the current theme
+- **Store & theme info** — Displays the current store name and theme name when available
+- **Open Admin Home** — Jump to the store's admin home page
+- **Open Page in Admin** — Open the admin page for the current product, collection, page, or blog article (storefront only)
+- **Open Theme Editor** — Open the theme editor for the current theme, preserving the current preview path where possible
 - **Open Code Editor** — Open Shopify's native code editor for the current theme
+- **Open SideKick chat** — Open SideKick in the admin
+- **Copy** — Copy the theme name, theme ID, theme preview URL, or theme editor URL to the clipboard
 
 ## Contributing
 
