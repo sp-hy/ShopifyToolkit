@@ -1,74 +1,20 @@
 <!DOCTYPE html>
 
 <head>
-  <script src="settings.js"></script>
+  <script src="../feature/openPage.js"></script>
 </head>
 
 <div id="mainPopup">
-  <div class="title-bar">Liquify</div>
+  <div class="title-bar">ShopifyToolkit</div>
 
   <div class="popup-inner">
-    <p>Shopify Code Editor Enhancer</p>
+    <p>Shopify Storefront Shortcuts</p>
     <hr />
-    <div class="setting-container">
-      <p>Editor Theme:</p>
-      <select class="setting-select setting-theme">
-        <option>VSCode</option>
-        <option>Atom</option>
-        <option>None</option>
-      </select>
-    </div>
-
-    <div class="setting-container">
-      <p>Tab Behaviour:</p>
-      <select class="setting-select setting-tab">
-        <option>Scroll</option>
-        <option>Stack</option>
-      </select>
-    </div>
-
-    <div class="" style="margin-bottom: 0.5rem;">
-      <span>File search throttle (requests per second):</span>
-      <select class="setting-select setting-throttle">
-        <option value="20">Slow/fallback (20)</option>
-        <option value="50">Standard (50)</option>
-        <option value="100">Advanced (100)</option>
-        <option value="500">Plus (500)</option>
-        <option value="1000">None</option>
-      </select>
-    </div>
-
-    <!-- TODO: fix word wrap -->
-    <div class="setting-container" style="display: none">
-      <p>Word Wrap Lines:</p>
-      <input type="checkbox" name="word-wrap" id="word-wrap" />
-    </div>
-
-    <div class="setting-container">
-      <p>Unlock admin width (experimental):</p>
-      <input type="checkbox" name="wide-admin" id="wide-admin" />
-    </div>
-
-    <div class="setting-container">
-      <p>Font-size:</p>
-      <input type="number" name="font-size" id="font-size" min="10" max="20" step="1" style="color:black" />
-      <p style="margin-left: 2px;">px</p>
-    </div>
-
-    <hr />
-    <p>Features:</p>
-    <ul>
-      <li>Enhanced Search</li>
-      <li>File type icons</li>
-      <li>Themes</li>
-      <li>Drag/Drop tabs</li>
-    </ul>
-    <hr />
-    <p>Storefront Shortcuts  (hover for info):</p>
+    <p>Shortcuts (hover for info):</p>
     <button class="button-admin" title="Open root /admin page">Open Admin Home</button>
     <button class="button-resource" title="Open admin page for the current Page/Collection/Blog/Product">Open Page in Admin</button>
     <button class="button-theme-editor" title="Open theme editor for the current theme">Open Theme Editor</button>
-    <button class="button-code-editor" title="Open code editor for the current theme">Open Code Editor</button>
+    <button class="button-code-editor" title="Open Shopify's native code editor for the current theme">Open Code Editor</button>
   </div>
 </div>
 
@@ -77,25 +23,6 @@
     width: 250px;
     background: #2d2d2d;
     font-family: Helvetica, Ubuntu, Arial, sans-serif;
-  }
-
-  input[type=number]::-webkit-inner-spin-button {
-    opacity: 1
-  }
-
-  .setting-select {
-    height: 18px;
-    background: #2d2d2d;
-  }
-
-  .setting-container {
-    display: inline-flex;
-  }
-
-  .setting-container p {
-    margin: 0.2em;
-    margin-left: 0;
-    margin-bottom: 0.5em;
   }
 
   .title-bar {
@@ -117,10 +44,6 @@
     padding: 1em;
     padding-top: 0;
     padding-bottom: 0.5em;
-  }
-
-  li {
-    list-style-type: disclosure-closed;
   }
 
   button {

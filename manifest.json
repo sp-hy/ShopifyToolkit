@@ -1,61 +1,20 @@
 {
-  "name": "Liquify - Shopify Code Search & Editor",
-  "version": "1.4.4",
+  "name": "ShopifyToolkit - Shopify Storefront Shortcuts",
+  "version": "1.5.0",
   "manifest_version": 3,
-  "description": "Code Search / Themes / Editor Enhancements",
-  "homepage_url": "https://github.com/lukechadwick/Liquify",
+  "description": "Quick shortcuts from Shopify storefront pages to admin",
+  "homepage_url": "https://github.com/sp-hy/ShopifyToolkit",
   "icons": {
     "128": "icons/icon128.png"
   },
   "options_page": "src/options/index.html",
   "action": {
     "default_icon": "icons/icon128.png",
-    "default_title": "Liquify",
+    "default_title": "ShopifyToolkit",
     "default_popup": "src/popup/popup.html"
   },
   "permissions": [
-    "storage",
     "activeTab",
     "scripting"
-  ],
-  "background": {
-    "service_worker": "src/background/background.js"
-  },
-  "content_scripts": [
-    {
-      "matches": ["https://online-store-web.shopifyapps.com/*"],
-      "js": [
-        "src/feature/_fontSize.js",
-        "src/feature/_search.js",
-        "src/feature/_theme.js",
-        "src/feature/_attachIcons.js",
-        "src/feature/_tabBehaviour.js",
-        "src/feature/wideAdmin.js"
-      ],
-      "all_frames": true
-    },
-    {
-      "matches": ["https://*.myshopify.com/admin/*", "https://admin.shopify.com/store/*"],
-      "js": [
-        "src/feature/_assetExtractor.js"
-      ],
-      "all_frames": true
-    }
-  ],
-  "web_accessible_resources": [
-    {
-      "resources": [
-        "src/feature/openAdmin-content.js",
-        "src/feature/openResource-content.js",
-        "src/feature/openThemeEditor-content.js",
-        "src/feature/openCodeEditor-content.js",
-        "src/themes/vscode.css",
-        "src/themes/atom.css",
-        "src/themes/icons.css",
-        "src/themes/common.css",
-        "src/themes/tabs.css"
-      ],
-      "matches": ["<all_urls>"]
-    }
   ]
 }
