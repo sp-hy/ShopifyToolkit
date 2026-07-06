@@ -1,6 +1,6 @@
 {
-  "name": "ShopifyToolkit - Shopify Storefront Shortcuts",
-  "version": "1.5.0",
+  "name": "Shopify Toolkit - Shopify Storefront Shortcuts",
+  "version": "1.0.0",
   "manifest_version": 3,
   "description": "Quick shortcuts from Shopify storefront pages to admin",
   "homepage_url": "https://github.com/sp-hy/ShopifyToolkit",
